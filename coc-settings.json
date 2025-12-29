@@ -1,0 +1,15 @@
+{
+  "languageserver": {
+    "clangd": {
+      "command": "clangd",
+      "filetypes": ["c", "cpp", "cxx", "h", "hpp"],
+      "rootPatterns": [".git/", "compile_commands.json"],
+      "trace.server": "verbose"
+    }
+  },
+  "suggest.autoTrigger": "always",
+  "hover.enable": true,
+  "diagnostic.enable": true,
+  "diagnostic.virtualText": true
+}
+

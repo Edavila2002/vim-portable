@@ -1,0 +1,16 @@
+# archivos de scripts
+.js
+.py
+.cpp
+.c
+
+# Plugins instalados (se instalan con :PlugInstall)
+vim/plugged/
+
+# Cache/estado de CoC (si se genera)
+.coc/
+
+# Temporales de Vim
+*.swp
+*.swo
+*~
