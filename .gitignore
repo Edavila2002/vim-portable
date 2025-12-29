@@ -1,8 +1,10 @@
-# archivos de scripts
-.js
-.py
-.cpp
-.c
+# Archivos locales / personales
+.viminfo
+.config/
+prueba.js
+test.c
+test.cpp
+test.py
 
 # Plugins instalados (se instalan con :PlugInstall)
 vim/plugged/
