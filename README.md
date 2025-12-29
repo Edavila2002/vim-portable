@@ -47,6 +47,7 @@ vim-portable/
 │   │   └── plug.vim       # Gestor de plugins (vim-plug)
 │   └── plugged/           # Plugins instalados (ignorado por Git)
 
+---
 
 ##  📝 Requisitos 
 
@@ -55,6 +56,7 @@ vim-portable/
 - Node.js(requerido para coc.nvim)
 - Nerd font (para iconos en el terminal)
 
+---
 
 ## ⚙️  Instalación
 
@@ -76,7 +78,7 @@ Dentro de Vim instala los Plugins:
 ```vim
 :PlugInstall
 ```
-
+---
 
 ## 🧠  Uso diario
 
@@ -86,6 +88,8 @@ Puedes abrir archivos o carpetas directamente:
 ./vim.sh archivo.js
 ./vim.sh 
 ```
+
+---
 
 ## 🧭 Comandos Git dentro de Vim
 
