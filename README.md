@@ -1,5 +1,7 @@
 # Vim Portable Configuration 🚀
 
+![Vim portable – vista general](assets/vim-imagen1.png)
+
 Configuración **portable y reproducible** de Vim, pensada para usar la **misma experiencia de edición** en cualquier computadora sin modificar el Vim del sistema.
 
 Este repositorio permite clonar, ejecutar y trabajar con Vim usando:
