@@ -103,4 +103,17 @@ Esta configuración incluye **vim-fugitive**, por lo que puedes usar:
 :Git commit
 :Git push
 ```
+---
+
+## 🧠 Nota sobre Coc (LSP)
+
+Este proyecto usa **coc.nvim** para autocompletado y soporte LSP.
+
+Dependiendo del lenguaje que uses, es posible que debas instalar
+las extensiones correspondientes dentro de Vim, por ejemplo:
+
+```vim
+:CocInstall coc-tsserver
+:CocInstall coc-pyright
+:CocInstall coc-clangd
 
