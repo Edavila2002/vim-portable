@@ -105,6 +105,37 @@ Esta configuración incluye **vim-fugitive**, por lo que puedes usar:
 ```
 ---
 
+## 🔌 Plugins utilizados
+
+Esta configuración utiliza los siguientes plugins y proyectos open-source:
+
+- **vim-plug**  
+  https://github.com/junegunn/vim-plug
+
+- **coc.nvim** (LSP y autocompletado)  
+  https://github.com/neoclide/coc.nvim
+
+- **NERDTree** (explorador de archivos)  
+  https://github.com/preservim/nerdtree
+
+- **fzf / fzf.vim** (búsqueda fuzzy)  
+  https://github.com/junegunn/fzf  
+  https://github.com/junegunn/fzf.vim
+
+- **vim-airline** (barra de estado)  
+  https://github.com/vim-airline/vim-airline
+
+- **vim-devicons** (iconos)  
+  https://github.com/ryanoasis/vim-devicons
+
+- **vim-fugitive** (Git en Vim)  
+  https://github.com/tpope/vim-fugitive
+
+- **vim-floaterm** (terminal flotante)  
+  https://github.com/voldikss/vim-floaterm
+
+---
+
 ## 🧠 Nota sobre Coc (LSP)
 
 Este proyecto usa **coc.nvim** para autocompletado y soporte LSP.
