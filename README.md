@@ -37,7 +37,7 @@ El objetivo de este repositorio es:
 ---
 
 ## 📂 Estructura del proyecto
-
+```text
 vim-portable/
 ├── vim.sh                 # Script para lanzar Vim portable
 ├── vimrc                  # Configuración principal de Vim
@@ -48,7 +48,7 @@ vim-portable/
 │   ├── autoload/
 │   │   └── plug.vim       # Gestor de plugins (vim-plug)
 │   └── plugged/           # Plugins instalados (ignorado por Git)
-
+```
 ---
 
 ##  📝 Requisitos 
