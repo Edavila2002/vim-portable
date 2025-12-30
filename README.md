@@ -37,7 +37,7 @@ El objetivo de este repositorio es:
 ---
 
 ## 📂 Estructura del proyecto
-```text
+
 vim-portable/
 ├── vim.sh                 # Script para lanzar Vim portable
 ├── vimrc                  # Configuración principal de Vim
