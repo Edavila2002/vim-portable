@@ -51,6 +51,20 @@ vim-portable/
 ```
 ---
 
+## 🖥️ Sistemas operativos compatibles
+
+Esta configuración de Vim está diseñada para sistemas Unix-like y ha sido probada en:
+
+- ✅ Linux (Ubuntu, Arch, Fedora, etc.)
+
+- ✅ macOS
+
+El script vim.sh detecta automáticamente el sistema y resuelve correctamente
+la ruta del proyecto, incluso cuando se ejecuta mediante enlaces simbólicos.
+
+
+---
+
 ##  📝 Requisitos 
 
 - Vim 8+
@@ -119,8 +133,6 @@ ln -s ruta al repositorio/vim-portable/vim.sh ~/.local/bin/vim.sh
 ```
 Un enlace simbólico no copia archivos ni modifica el repositorio;
 simplemente le indica al sistema dónde se encuentra el script original.
-
----
 
 ---
 
