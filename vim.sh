@@ -1,18 +1,20 @@
 #!/usr/bin/env bash
 
-# Ruta absoluta del directorio del script
-DIR="$(cd "$(dirname "$0")" && pwd)"
+# Resolver ruta real del script (Linux y macOS)
+if command -v greadlink >/dev/null 2>&1; then
+  SCRIPT_PATH="$(greadlink -f "${BASH_SOURCE[0]}")"
+elif command -v readlink >/dev/null 2>&1; then
+  SCRIPT_PATH="$(readlink "${BASH_SOURCE[0]}")"
+else
+  SCRIPT_PATH="${BASH_SOURCE[0]}"
+fi
 
-# Hace que Vim use este repo como HOME
-# (evita escribir en ~/.vim y ~/.config)
+DIR="$(cd "$(dirname "$SCRIPT_PATH")" && pwd)"
+
+# Aislar Vim dentro del repo
 export HOME="$DIR"
 
-# Lanza Vim con configuración portable
-# -u     -> usa este vimrc
-# --cmd  -> añade esta ruta al runtimepath
-# "$@"   -> pasa archivos como argumentos
 vim \
   -u "$DIR/vimrc" \
   --cmd "set runtimepath^=$DIR/vim" \
   "$@"
-
