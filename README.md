@@ -93,6 +93,52 @@ Puedes abrir archivos o carpetas directamente:
 
 ---
 
+## 🌍 Uso global (opcional)
+
+Por defecto, Vim-portable se ejecuta desde la carpeta del repositorio. Esto funciona correctamente, pero requiere estar ubicado dentro del proyecto o escribir la ruta absoluta al script.
+
+```bash
+./vim.sh archivo.txt
+```
+
+
+Si deseas ejecutar el mismo vim.sh desde cualquier carpeta del sistema, puedes habilitar el uso global creando un enlace simbólico.
+
+En tu sistema verifica que tengas la carpepta *** ~/.local/bin ***, si no la tienes, creala:
+
+```
+mkdir -p ~/.local/bin
+```
+
+Dentro de la carpeta crea un enlace simbólico a vim.sh, debes poner la ruta en donde clonaste el repositorio:
+
+```
+
+ln -s ruta al repositorio/vim-portable/vim.sh ~/.local/bin/vim.sh
+
+```
+Un enlace simbólico no copia archivos ni modifica el repositorio;
+simplemente le indica al sistema dónde se encuentra el script original.
+
+---
+
+---
+
+##  👍 Uso desde cualquier carpeta
+
+Puedes ejecutar vim-portable desde cualquier ubicación:
+
+```
+vim.sh archivo.c
+vim.sh archivo.py
+vim.sh .
+```
+
+El comportamiento será exactamente el mismo que al ejecutar ./vim.sh
+desde el repositorio.
+
+---
+
 ## 🧭 Comandos Git dentro de Vim
 
 Esta configuración incluye **vim-fugitive**, por lo que puedes usar:
@@ -103,6 +149,22 @@ Esta configuración incluye **vim-fugitive**, por lo que puedes usar:
 :Git commit
 :Git push
 ```
+
+---
+
+## 🧠 Nota sobre Coc (LSP)
+
+Este proyecto usa **coc.nvim** para autocompletado y soporte LSP.
+
+Dependiendo del lenguaje que uses, es posible que debas instalar
+las extensiones correspondientes dentro de Vim, por ejemplo:
+
+```vim
+:CocInstall coc-tsserver
+:CocInstall coc-pyright
+:CocInstall coc-clangd
+```
+
 ---
 
 ## 🔌 Plugins utilizados
@@ -135,16 +197,4 @@ Esta configuración utiliza los siguientes plugins y proyectos open-source:
   https://github.com/voldikss/vim-floaterm
 
 ---
-
-## 🧠 Nota sobre Coc (LSP)
-
-Este proyecto usa **coc.nvim** para autocompletado y soporte LSP.
-
-Dependiendo del lenguaje que uses, es posible que debas instalar
-las extensiones correspondientes dentro de Vim, por ejemplo:
-
-```vim
-:CocInstall coc-tsserver
-:CocInstall coc-pyright
-:CocInstall coc-clangd
 
