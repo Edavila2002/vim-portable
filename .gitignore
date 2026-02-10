@@ -23,3 +23,10 @@ vim/plugged/
 bin/
 *.swp
 tags
+
+# Archivos de sistema y cache que NO deben subirse
+.npm/
+.cache/
+.local/
+.bash_history
+.viminfo

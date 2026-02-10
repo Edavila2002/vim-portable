@@ -1,6 +1,0 @@
-[Desktop Entry]
-Icon=text-html
-Name=profile
-Type=Link
-URL[$e]=https://www.codeium.com/profile?response_type=token&redirect_uri=vim-show-auth-token&state=a&scope=openid profile email&redirect_parameters_type=query
-X-KDE-LastOpenedWith=firefox_firefox
