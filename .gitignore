@@ -5,6 +5,7 @@ prueba.js
 test.c
 test.cpp
 test.py
+.gemini_key
 
 # Plugins instalados (se instalan con :PlugInstall)
 vim/plugged/
@@ -16,3 +17,9 @@ vim/plugged/
 *.swp
 *.swo
 *~
+
+# Ignorar binarios de IA y carpetas temporales
+.codeium/
+bin/
+*.swp
+tags

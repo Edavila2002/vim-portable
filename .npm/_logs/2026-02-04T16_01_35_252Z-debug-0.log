@@ -1,0 +1,920 @@
+0 verbose cli /usr/bin/node /usr/bin/npm
+1 info using npm@9.2.0
+2 info using node@v18.19.1
+3 timing npm:load:whichnode Completed in 0ms
+4 timing config:load:defaults Completed in 1ms
+5 timing config:load:file:/usr/share/nodejs/npm/npmrc Completed in 1ms
+6 timing config:load:builtin Completed in 1ms
+7 timing config:load:cli Completed in 2ms
+8 timing config:load:env Completed in 0ms
+9 timing config:load:file:/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/.npmrc Completed in 0ms
+10 timing config:load:project Completed in 2ms
+11 timing config:load:file:/home/estedev/vim-portable/.npmrc Completed in 0ms
+12 timing config:load:user Completed in 1ms
+13 timing config:load:file:/etc/npmrc Completed in 0ms
+14 timing config:load:global Completed in 0ms
+15 timing config:load:setEnvs Completed in 1ms
+16 timing config:load Completed in 8ms
+17 timing npm:load:configload Completed in 8ms
+18 timing npm:load:mkdirpcache Completed in 0ms
+19 timing npm:load:mkdirplogs Completed in 0ms
+20 verbose title npm install
+21 verbose argv "install" "--ignore-scripts" "--no-package-lock" "--omit" "dev" "--legacy-peer-deps" "--no-global"
+22 timing npm:load:setTitle Completed in 1ms
+23 timing config:load:flatten Completed in 2ms
+24 timing npm:load:display Completed in 3ms
+25 verbose logfile logs-max:10 dir:/home/estedev/vim-portable/.npm/_logs/2026-02-04T16_01_35_252Z-
+26 verbose logfile /home/estedev/vim-portable/.npm/_logs/2026-02-04T16_01_35_252Z-debug-0.log
+27 timing npm:load:logFile Completed in 5ms
+28 timing npm:load:timers Completed in 0ms
+29 timing npm:load:configScope Completed in 0ms
+30 timing npm:load Completed in 18ms
+31 silly logfile done cleaning log files
+32 timing config:load:flatten Completed in 1ms
+33 timing arborist:ctor Completed in 0ms
+34 timing arborist:ctor Completed in 0ms
+35 timing idealTree:init Completed in 10ms
+36 timing idealTree:userRequests Completed in 0ms
+37 silly idealTree buildDeps
+38 silly fetch manifest pyright@^1.1.407
+39 http fetch GET 200 https://registry.npmjs.org/pyright 211ms (cache miss)
+40 silly fetch manifest @biomejs/biome@2.3.11
+41 http fetch GET 200 https://registry.npmjs.org/@biomejs%2fbiome 439ms (cache miss)
+42 silly fetch manifest @types/diff-match-patch@^1.0.36
+43 http fetch GET 200 https://registry.npmjs.org/@types%2fdiff-match-patch 405ms (cache miss)
+44 silly fetch manifest @types/md5@^2.3.6
+45 http fetch GET 200 https://registry.npmjs.org/@types%2fmd5 337ms (cache miss)
+46 silly fetch manifest @types/node@16
+47 http fetch GET 200 https://registry.npmjs.org/@types%2fnode 14ms (cache hit)
+48 silly fetch manifest @types/which@^3.0.4
+49 http fetch GET 200 https://registry.npmjs.org/@types%2fwhich 325ms (cache miss)
+50 silly fetch manifest @zzzen/pyright-internal@^1.2.0-dev.20251207
+51 http fetch GET 200 https://registry.npmjs.org/@zzzen%2fpyright-internal 947ms (cache miss)
+52 silly fetch manifest coc.nvim@^0.0.83-next.18
+53 http fetch GET 200 https://registry.npmjs.org/coc.nvim 2ms (cache hit)
+54 silly fetch manifest diff-match-patch@^1.0.5
+55 http fetch GET 200 https://registry.npmjs.org/diff-match-patch 38ms (cache miss)
+56 silly fetch manifest esbuild@^0.27.2
+57 http fetch GET 200 https://registry.npmjs.org/esbuild 4ms (cache hit)
+58 silly fetch manifest get-port@^7.1.0
+59 http fetch GET 200 https://registry.npmjs.org/get-port 179ms (cache miss)
+60 silly fetch manifest iconv-lite@^0.7.1
+61 http fetch GET 200 https://registry.npmjs.org/iconv-lite 41ms (cache miss)
+62 silly fetch manifest md5@^2.3.0
+63 http fetch GET 200 https://registry.npmjs.org/md5 51ms (cache miss)
+64 silly fetch manifest minimatch@^10.1.1
+65 http fetch GET 200 https://registry.npmjs.org/minimatch 47ms (cache miss)
+66 silly fetch manifest named-js-regexp@^1.3.5
+67 http fetch GET 200 https://registry.npmjs.org/named-js-regexp 223ms (cache miss)
+68 silly fetch manifest rxjs@^7.8.2
+69 http fetch GET 200 https://registry.npmjs.org/rxjs 40ms (cache miss)
+70 silly fetch manifest tree-kill@^1.2.2
+71 http fetch GET 200 https://registry.npmjs.org/tree-kill 42ms (cache miss)
+72 silly fetch manifest typescript@^5.9.3
+73 http fetch GET 200 https://registry.npmjs.org/typescript 16ms (cache hit)
+74 silly fetch manifest which@^4.0.0
+75 http fetch GET 200 https://registry.npmjs.org/which 4ms (cache hit)
+76 silly placeDep ROOT @biomejs/biome@2.3.11 OK for: coc-pyright@1.1.407 want: 2.3.11
+77 silly placeDep ROOT @types/diff-match-patch@1.0.36 OK for: coc-pyright@1.1.407 want: ^1.0.36
+78 silly placeDep ROOT @types/md5@2.3.6 OK for: coc-pyright@1.1.407 want: ^2.3.6
+79 silly placeDep ROOT @types/node@16.18.126 OK for: coc-pyright@1.1.407 want: 16
+80 silly placeDep ROOT @types/which@3.0.4 OK for: coc-pyright@1.1.407 want: ^3.0.4
+81 silly placeDep ROOT @zzzen/pyright-internal@1.2.0-dev.20251207 OK for: coc-pyright@1.1.407 want: ^1.2.0-dev.20251207
+82 silly placeDep ROOT coc.nvim@0.0.83-next.24 OK for: coc-pyright@1.1.407 want: ^0.0.83-next.18
+83 silly placeDep ROOT diff-match-patch@1.0.5 OK for: coc-pyright@1.1.407 want: ^1.0.5
+84 silly placeDep ROOT esbuild@0.27.2 OK for: coc-pyright@1.1.407 want: ^0.27.2
+85 silly placeDep ROOT get-port@7.1.0 OK for: coc-pyright@1.1.407 want: ^7.1.0
+86 silly placeDep ROOT iconv-lite@0.7.2 OK for: coc-pyright@1.1.407 want: ^0.7.1
+87 silly placeDep ROOT md5@2.3.0 OK for: coc-pyright@1.1.407 want: ^2.3.0
+88 silly placeDep ROOT minimatch@10.1.2 OK for: coc-pyright@1.1.407 want: ^10.1.1
+89 silly placeDep ROOT named-js-regexp@1.3.5 OK for: coc-pyright@1.1.407 want: ^1.3.5
+90 silly placeDep ROOT pyright@1.1.408 OK for: coc-pyright@1.1.407 want: ^1.1.407
+91 silly placeDep ROOT rxjs@7.8.2 OK for: coc-pyright@1.1.407 want: ^7.8.2
+92 silly placeDep ROOT tree-kill@1.2.2 OK for: coc-pyright@1.1.407 want: ^1.2.2
+93 silly placeDep ROOT typescript@5.9.3 OK for: coc-pyright@1.1.407 want: ^5.9.3
+94 silly placeDep ROOT which@4.0.0 OK for: coc-pyright@1.1.407 want: ^4.0.0
+95 silly fetch manifest @biomejs/cli-linux-x64@2.3.11
+96 silly fetch manifest @biomejs/cli-win32-x64@2.3.11
+97 silly fetch manifest @biomejs/cli-darwin-x64@2.3.11
+98 silly fetch manifest @biomejs/cli-linux-arm64@2.3.11
+99 silly fetch manifest @biomejs/cli-win32-arm64@2.3.11
+100 silly fetch manifest @biomejs/cli-darwin-arm64@2.3.11
+101 silly fetch manifest @biomejs/cli-linux-x64-musl@2.3.11
+102 silly fetch manifest @biomejs/cli-linux-arm64-musl@2.3.11
+103 silly fetch manifest tmp@^0.2.5
+104 silly fetch manifest chalk@^4.1.2
+105 silly fetch manifest chokidar@^3.6.0
+106 silly fetch manifest smol-toml@^1.4.2
+107 silly fetch manifest vscode-uri@^3.1.0
+108 silly fetch manifest jsonc-parser@^3.3.1
+109 silly fetch manifest @yarnpkg/fslib@2.10.4
+110 silly fetch manifest vscode-jsonrpc@^9.0.0-next.8
+111 silly fetch manifest @yarnpkg/libzip@2.3.0
+112 silly fetch manifest command-line-args@^5.2.1
+113 silly fetch manifest source-map-support@^0.5.21
+114 silly fetch manifest vscode-languageserver@^10.0.0-next.13
+115 silly fetch manifest vscode-languageserver-types@^3.17.6-next.5
+116 silly fetch manifest vscode-languageserver-protocol@^3.17.6-next.13
+117 silly fetch manifest vscode-languageserver-textdocument@^1.0.11
+118 silly fetch manifest @esbuild/aix-ppc64@0.27.2
+119 silly fetch manifest @esbuild/android-arm@0.27.2
+120 silly fetch manifest @esbuild/android-arm64@0.27.2
+121 silly fetch manifest @esbuild/android-x64@0.27.2
+122 silly fetch manifest @esbuild/darwin-arm64@0.27.2
+123 silly fetch manifest @esbuild/darwin-x64@0.27.2
+124 silly fetch manifest @esbuild/freebsd-arm64@0.27.2
+125 silly fetch manifest @esbuild/freebsd-x64@0.27.2
+126 silly fetch manifest @esbuild/linux-arm@0.27.2
+127 silly fetch manifest @esbuild/linux-arm64@0.27.2
+128 silly fetch manifest @esbuild/linux-ia32@0.27.2
+129 silly fetch manifest @esbuild/linux-loong64@0.27.2
+130 silly fetch manifest @esbuild/linux-mips64el@0.27.2
+131 silly fetch manifest @esbuild/linux-ppc64@0.27.2
+132 silly fetch manifest @esbuild/linux-riscv64@0.27.2
+133 silly fetch manifest @esbuild/linux-s390x@0.27.2
+134 silly fetch manifest @esbuild/linux-x64@0.27.2
+135 silly fetch manifest @esbuild/netbsd-arm64@0.27.2
+136 silly fetch manifest @esbuild/netbsd-x64@0.27.2
+137 silly fetch manifest @esbuild/openbsd-arm64@0.27.2
+138 silly fetch manifest @esbuild/openbsd-x64@0.27.2
+139 silly fetch manifest @esbuild/openharmony-arm64@0.27.2
+140 silly fetch manifest @esbuild/sunos-x64@0.27.2
+141 silly fetch manifest @esbuild/win32-arm64@0.27.2
+142 silly fetch manifest @esbuild/win32-ia32@0.27.2
+143 silly fetch manifest @esbuild/win32-x64@0.27.2
+144 silly fetch manifest safer-buffer@>= 2.1.2 < 3.0.0
+145 silly fetch manifest crypt@0.0.2
+146 silly fetch manifest charenc@0.0.2
+147 silly fetch manifest is-buffer@~1.1.6
+148 silly fetch manifest @isaacs/brace-expansion@^5.0.1
+149 silly fetch manifest fsevents@~2.3.3
+150 silly fetch manifest tslib@^2.1.0
+151 silly fetch manifest isexe@^3.1.1
+152 http fetch GET 200 https://registry.npmjs.org/vscode-jsonrpc 83ms (cache hit)
+153 http fetch GET 200 https://registry.npmjs.org/@esbuild%2faix-ppc64 80ms (cache hit)
+154 http fetch GET 200 https://registry.npmjs.org/vscode-languageserver-types 83ms (cache hit)
+155 http fetch GET 200 https://registry.npmjs.org/vscode-languageserver-protocol 85ms (cache hit)
+156 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fdarwin-x64 82ms (cache hit)
+157 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fandroid-arm 85ms (cache hit)
+158 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fandroid-x64 84ms (cache hit)
+159 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fdarwin-arm64 84ms (cache hit)
+160 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fandroid-arm64 86ms (cache hit)
+161 http fetch GET 200 https://registry.npmjs.org/@esbuild%2ffreebsd-x64 84ms (cache hit)
+162 http fetch GET 200 https://registry.npmjs.org/@esbuild%2flinux-arm 84ms (cache hit)
+163 http fetch GET 200 https://registry.npmjs.org/@esbuild%2ffreebsd-arm64 85ms (cache hit)
+164 http fetch GET 200 https://registry.npmjs.org/@esbuild%2flinux-ia32 84ms (cache hit)
+165 http fetch GET 200 https://registry.npmjs.org/@esbuild%2flinux-arm64 85ms (cache hit)
+166 http fetch GET 200 https://registry.npmjs.org/@esbuild%2flinux-loong64 84ms (cache hit)
+167 http fetch GET 200 https://registry.npmjs.org/@esbuild%2flinux-mips64el 85ms (cache hit)
+168 http fetch GET 200 https://registry.npmjs.org/@esbuild%2flinux-ppc64 84ms (cache hit)
+169 http fetch GET 200 https://registry.npmjs.org/@esbuild%2flinux-riscv64 82ms (cache hit)
+170 http fetch GET 200 https://registry.npmjs.org/@esbuild%2flinux-x64 82ms (cache hit)
+171 http fetch GET 200 https://registry.npmjs.org/@esbuild%2flinux-s390x 84ms (cache hit)
+172 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fnetbsd-x64 84ms (cache hit)
+173 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fnetbsd-arm64 84ms (cache hit)
+174 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fopenbsd-arm64 84ms (cache hit)
+175 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fopenbsd-x64 84ms (cache hit)
+176 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fopenharmony-arm64 84ms (cache hit)
+177 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fwin32-ia32 83ms (cache hit)
+178 http fetch GET 200 https://registry.npmjs.org/isexe 75ms (cache hit)
+179 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fwin32-arm64 84ms (cache hit)
+180 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fsunos-x64 85ms (cache hit)
+181 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fwin32-x64 85ms (cache hit)
+182 http fetch GET 200 https://registry.npmjs.org/tmp 151ms (cache miss)
+183 http fetch GET 200 https://registry.npmjs.org/vscode-uri 148ms (cache miss)
+184 http fetch GET 200 https://registry.npmjs.org/chalk 156ms (cache miss)
+185 http fetch GET 200 https://registry.npmjs.org/chokidar 162ms (cache miss)
+186 http fetch GET 200 https://registry.npmjs.org/jsonc-parser 181ms (cache miss)
+187 http fetch GET 200 https://registry.npmjs.org/source-map-support 185ms (cache miss)
+188 http fetch GET 200 https://registry.npmjs.org/vscode-languageserver 218ms (cache miss)
+189 http fetch GET 200 https://registry.npmjs.org/safer-buffer 202ms (cache miss)
+190 http fetch GET 200 https://registry.npmjs.org/smol-toml 309ms (cache miss)
+191 http fetch GET 200 https://registry.npmjs.org/command-line-args 317ms (cache miss)
+192 http fetch GET 200 https://registry.npmjs.org/is-buffer 321ms (cache miss)
+193 http fetch GET 200 https://registry.npmjs.org/vscode-languageserver-textdocument 355ms (cache miss)
+194 http fetch GET 200 https://registry.npmjs.org/@biomejs%2fcli-linux-x64 373ms (cache miss)
+195 http fetch GET 200 https://registry.npmjs.org/@isaacs%2fbrace-expansion 353ms (cache miss)
+196 http fetch GET 200 https://registry.npmjs.org/fsevents 360ms (cache miss)
+197 http fetch GET 200 https://registry.npmjs.org/crypt 371ms (cache miss)
+198 http fetch GET 200 https://registry.npmjs.org/tslib 370ms (cache miss)
+199 http fetch GET 200 https://registry.npmjs.org/@biomejs%2fcli-linux-arm64 454ms (cache miss)
+200 http fetch GET 200 https://registry.npmjs.org/@biomejs%2fcli-win32-arm64 555ms (cache miss)
+201 http fetch GET 200 https://registry.npmjs.org/@biomejs%2fcli-darwin-arm64 554ms (cache miss)
+202 http fetch GET 200 https://registry.npmjs.org/@biomejs%2fcli-linux-x64-musl 559ms (cache miss)
+203 http fetch GET 200 https://registry.npmjs.org/@yarnpkg%2flibzip 564ms (cache miss)
+204 http fetch GET 200 https://registry.npmjs.org/@biomejs%2fcli-win32-x64 576ms (cache miss)
+205 http fetch GET 200 https://registry.npmjs.org/charenc 653ms (cache miss)
+206 http fetch GET 200 https://registry.npmjs.org/@biomejs%2fcli-linux-arm64-musl 706ms (cache miss)
+207 http fetch GET 200 https://registry.npmjs.org/@biomejs%2fcli-darwin-x64 738ms (cache miss)
+208 http fetch GET 200 https://registry.npmjs.org/@yarnpkg%2ffslib 848ms (cache miss)
+209 timing idealTree:#root Completed in 4330ms
+210 silly placeDep ROOT @biomejs/cli-darwin-arm64@2.3.11 OK for: @biomejs/biome@2.3.11 want: 2.3.11
+211 silly placeDep ROOT @biomejs/cli-darwin-x64@2.3.11 OK for: @biomejs/biome@2.3.11 want: 2.3.11
+212 silly placeDep ROOT @biomejs/cli-linux-arm64@2.3.11 OK for: @biomejs/biome@2.3.11 want: 2.3.11
+213 silly placeDep ROOT @biomejs/cli-linux-arm64-musl@2.3.11 OK for: @biomejs/biome@2.3.11 want: 2.3.11
+214 silly placeDep ROOT @biomejs/cli-linux-x64@2.3.11 OK for: @biomejs/biome@2.3.11 want: 2.3.11
+215 silly placeDep ROOT @biomejs/cli-linux-x64-musl@2.3.11 OK for: @biomejs/biome@2.3.11 want: 2.3.11
+216 silly placeDep ROOT @biomejs/cli-win32-arm64@2.3.11 OK for: @biomejs/biome@2.3.11 want: 2.3.11
+217 silly placeDep ROOT @biomejs/cli-win32-x64@2.3.11 OK for: @biomejs/biome@2.3.11 want: 2.3.11
+218 timing idealTree:node_modules/@biomejs/biome Completed in 5ms
+219 timing idealTree:node_modules/@biomejs/cli-darwin-arm64 Completed in 1ms
+220 timing idealTree:node_modules/@biomejs/cli-darwin-x64 Completed in 0ms
+221 timing idealTree:node_modules/@biomejs/cli-linux-arm64 Completed in 0ms
+222 timing idealTree:node_modules/@biomejs/cli-linux-arm64-musl Completed in 0ms
+223 timing idealTree:node_modules/@biomejs/cli-linux-x64 Completed in 0ms
+224 timing idealTree:node_modules/@biomejs/cli-linux-x64-musl Completed in 0ms
+225 timing idealTree:node_modules/@biomejs/cli-win32-arm64 Completed in 0ms
+226 timing idealTree:node_modules/@biomejs/cli-win32-x64 Completed in 0ms
+227 timing idealTree:node_modules/@types/diff-match-patch Completed in 0ms
+228 timing idealTree:node_modules/@types/md5 Completed in 0ms
+229 timing idealTree:node_modules/@types/node Completed in 0ms
+230 timing idealTree:node_modules/@types/which Completed in 0ms
+231 silly placeDep ROOT @yarnpkg/fslib@2.10.4 OK for: @zzzen/pyright-internal@1.2.0-dev.20251207 want: 2.10.4
+232 silly placeDep ROOT @yarnpkg/libzip@2.3.0 OK for: @zzzen/pyright-internal@1.2.0-dev.20251207 want: 2.3.0
+233 silly placeDep ROOT chalk@4.1.2 OK for: @zzzen/pyright-internal@1.2.0-dev.20251207 want: ^4.1.2
+234 silly placeDep ROOT chokidar@3.6.0 OK for: @zzzen/pyright-internal@1.2.0-dev.20251207 want: ^3.6.0
+235 silly placeDep ROOT command-line-args@5.2.1 OK for: @zzzen/pyright-internal@1.2.0-dev.20251207 want: ^5.2.1
+236 silly placeDep ROOT jsonc-parser@3.3.1 OK for: @zzzen/pyright-internal@1.2.0-dev.20251207 want: ^3.3.1
+237 silly placeDep ROOT smol-toml@1.6.0 OK for: @zzzen/pyright-internal@1.2.0-dev.20251207 want: ^1.4.2
+238 silly placeDep ROOT source-map-support@0.5.21 OK for: @zzzen/pyright-internal@1.2.0-dev.20251207 want: ^0.5.21
+239 silly placeDep ROOT tmp@0.2.5 OK for: @zzzen/pyright-internal@1.2.0-dev.20251207 want: ^0.2.5
+240 silly placeDep ROOT vscode-jsonrpc@9.0.0-next.11 OK for: @zzzen/pyright-internal@1.2.0-dev.20251207 want: ^9.0.0-next.8
+241 silly placeDep ROOT vscode-languageserver@10.0.0-next.16 OK for: @zzzen/pyright-internal@1.2.0-dev.20251207 want: ^10.0.0-next.13
+242 silly placeDep ROOT vscode-languageserver-protocol@3.17.6-next.16 OK for: @zzzen/pyright-internal@1.2.0-dev.20251207 want: ^3.17.6-next.13
+243 silly placeDep ROOT vscode-languageserver-textdocument@1.0.12 OK for: @zzzen/pyright-internal@1.2.0-dev.20251207 want: ^1.0.11
+244 silly placeDep ROOT vscode-languageserver-types@3.17.6-next.6 OK for: @zzzen/pyright-internal@1.2.0-dev.20251207 want: ^3.17.6-next.5
+245 silly placeDep ROOT vscode-uri@3.1.0 OK for: @zzzen/pyright-internal@1.2.0-dev.20251207 want: ^3.1.0
+246 silly fetch manifest tslib@^1.13.0
+247 silly fetch manifest @types/emscripten@^1.39.6
+248 silly fetch manifest ansi-styles@^4.1.0
+249 silly fetch manifest supports-color@^7.1.0
+250 silly fetch manifest braces@~3.0.2
+251 silly fetch manifest is-glob@~4.0.1
+252 silly fetch manifest anymatch@~3.1.2
+253 silly fetch manifest readdirp@~3.6.0
+254 silly fetch manifest glob-parent@~5.1.2
+255 silly fetch manifest is-binary-path@~2.1.0
+256 silly fetch manifest normalize-path@~3.0.0
+257 silly fetch manifest fsevents@~2.3.2
+258 silly fetch manifest typical@^4.0.0
+259 silly fetch manifest array-back@^3.1.0
+260 silly fetch manifest find-replace@^3.0.0
+261 silly fetch manifest lodash.camelcase@^4.3.0
+262 silly fetch manifest buffer-from@^1.0.0
+263 silly fetch manifest source-map@^0.6.0
+264 http fetch GET 200 https://registry.npmjs.org/anymatch 46ms (cache miss)
+265 http fetch GET 200 https://registry.npmjs.org/normalize-path 51ms (cache miss)
+266 http fetch GET 200 https://registry.npmjs.org/ansi-styles 55ms (cache miss)
+267 http fetch GET 200 https://registry.npmjs.org/@types%2femscripten 66ms (cache miss)
+268 http fetch GET 200 https://registry.npmjs.org/lodash.camelcase 62ms (cache miss)
+269 http fetch GET 200 https://registry.npmjs.org/buffer-from 61ms (cache miss)
+270 http fetch GET 200 https://registry.npmjs.org/is-glob 67ms (cache miss)
+271 http fetch GET 200 https://registry.npmjs.org/braces 67ms (cache miss)
+272 http fetch GET 200 https://registry.npmjs.org/glob-parent 67ms (cache miss)
+273 http fetch GET 200 https://registry.npmjs.org/supports-color 69ms (cache miss)
+274 http fetch GET 200 https://registry.npmjs.org/source-map 85ms (cache miss)
+275 http fetch GET 200 https://registry.npmjs.org/is-binary-path 190ms (cache miss)
+276 http fetch GET 200 https://registry.npmjs.org/array-back 189ms (cache miss)
+277 http fetch GET 200 https://registry.npmjs.org/typical 190ms (cache miss)
+278 http fetch GET 200 https://registry.npmjs.org/readdirp 197ms (cache miss)
+279 http fetch GET 200 https://registry.npmjs.org/find-replace 446ms (cache miss)
+280 timing idealTree:node_modules/@zzzen/pyright-internal Completed in 465ms
+281 silly placeDep ROOT tslib@1.14.1 OK for: @yarnpkg/fslib@2.10.4 want: ^1.13.0
+282 timing idealTree:node_modules/@yarnpkg/fslib Completed in 1ms
+283 silly placeDep ROOT @types/emscripten@1.41.5 OK for: @yarnpkg/libzip@2.3.0 want: ^1.39.6
+284 timing idealTree:node_modules/@yarnpkg/libzip Completed in 1ms
+285 timing idealTree:node_modules/@types/emscripten Completed in 0ms
+286 silly placeDep ROOT ansi-styles@4.3.0 OK for: chalk@4.1.2 want: ^4.1.0
+287 silly placeDep ROOT supports-color@7.2.0 OK for: chalk@4.1.2 want: ^7.1.0
+288 silly fetch manifest color-convert@^2.0.1
+289 silly fetch manifest has-flag@^4.0.0
+290 http fetch GET 200 https://registry.npmjs.org/has-flag 38ms (cache miss)
+291 http fetch GET 200 https://registry.npmjs.org/color-convert 41ms (cache miss)
+292 timing idealTree:node_modules/chalk Completed in 43ms
+293 silly placeDep ROOT color-convert@2.0.1 OK for: ansi-styles@4.3.0 want: ^2.0.1
+294 silly fetch manifest color-name@~1.1.4
+295 http fetch GET 200 https://registry.npmjs.org/color-name 39ms (cache miss)
+296 timing idealTree:node_modules/ansi-styles Completed in 41ms
+297 silly placeDep ROOT anymatch@3.1.3 OK for: chokidar@3.6.0 want: ~3.1.2
+298 silly placeDep ROOT braces@3.0.3 OK for: chokidar@3.6.0 want: ~3.0.2
+299 silly placeDep ROOT fsevents@2.3.3 OK for: chokidar@3.6.0 want: ~2.3.2
+300 silly placeDep ROOT glob-parent@5.1.2 OK for: chokidar@3.6.0 want: ~5.1.2
+301 silly placeDep ROOT is-binary-path@2.1.0 OK for: chokidar@3.6.0 want: ~2.1.0
+302 silly placeDep ROOT is-glob@4.0.3 OK for: chokidar@3.6.0 want: ~4.0.1
+303 silly placeDep ROOT normalize-path@3.0.0 OK for: chokidar@3.6.0 want: ~3.0.0
+304 silly placeDep ROOT readdirp@3.6.0 OK for: chokidar@3.6.0 want: ~3.6.0
+305 silly fetch manifest picomatch@^2.0.4
+306 silly fetch manifest fill-range@^7.1.1
+307 silly fetch manifest binary-extensions@^2.0.0
+308 silly fetch manifest is-extglob@^2.1.1
+309 silly fetch manifest picomatch@^2.2.1
+310 http fetch GET 200 https://registry.npmjs.org/picomatch 43ms (cache miss)
+311 http fetch GET 200 https://registry.npmjs.org/binary-extensions 42ms (cache miss)
+312 http fetch GET 200 https://registry.npmjs.org/picomatch 45ms (cache miss)
+313 http fetch GET 200 https://registry.npmjs.org/fill-range 47ms (cache miss)
+314 http fetch GET 200 https://registry.npmjs.org/is-extglob 54ms (cache miss)
+315 timing idealTree:node_modules/chokidar Completed in 61ms
+316 silly placeDep ROOT picomatch@2.3.1 OK for: anymatch@3.1.3 want: ^2.0.4
+317 timing idealTree:node_modules/anymatch Completed in 1ms
+318 silly placeDep ROOT fill-range@7.1.1 OK for: braces@3.0.3 want: ^7.1.1
+319 silly fetch manifest to-regex-range@^5.0.1
+320 http fetch GET 200 https://registry.npmjs.org/to-regex-range 39ms (cache miss)
+321 timing idealTree:node_modules/braces Completed in 40ms
+322 timing idealTree:node_modules/coc.nvim Completed in 0ms
+323 silly placeDep ROOT color-name@1.1.4 OK for: color-convert@2.0.1 want: ~1.1.4
+324 timing idealTree:node_modules/color-convert Completed in 1ms
+325 timing idealTree:node_modules/color-name Completed in 0ms
+326 silly placeDep ROOT array-back@3.1.0 OK for: command-line-args@5.2.1 want: ^3.1.0
+327 silly placeDep ROOT find-replace@3.0.0 OK for: command-line-args@5.2.1 want: ^3.0.0
+328 silly placeDep ROOT lodash.camelcase@4.3.0 OK for: command-line-args@5.2.1 want: ^4.3.0
+329 silly placeDep ROOT typical@4.0.0 OK for: command-line-args@5.2.1 want: ^4.0.0
+330 timing idealTree:node_modules/command-line-args Completed in 3ms
+331 timing idealTree:node_modules/array-back Completed in 0ms
+332 timing idealTree:node_modules/diff-match-patch Completed in 0ms
+333 silly placeDep ROOT @esbuild/aix-ppc64@0.27.2 OK for: esbuild@0.27.2 want: 0.27.2
+334 silly placeDep ROOT @esbuild/android-arm@0.27.2 OK for: esbuild@0.27.2 want: 0.27.2
+335 silly placeDep ROOT @esbuild/android-arm64@0.27.2 OK for: esbuild@0.27.2 want: 0.27.2
+336 silly placeDep ROOT @esbuild/android-x64@0.27.2 OK for: esbuild@0.27.2 want: 0.27.2
+337 silly placeDep ROOT @esbuild/darwin-arm64@0.27.2 OK for: esbuild@0.27.2 want: 0.27.2
+338 silly placeDep ROOT @esbuild/darwin-x64@0.27.2 OK for: esbuild@0.27.2 want: 0.27.2
+339 silly placeDep ROOT @esbuild/freebsd-arm64@0.27.2 OK for: esbuild@0.27.2 want: 0.27.2
+340 silly placeDep ROOT @esbuild/freebsd-x64@0.27.2 OK for: esbuild@0.27.2 want: 0.27.2
+341 silly placeDep ROOT @esbuild/linux-arm@0.27.2 OK for: esbuild@0.27.2 want: 0.27.2
+342 silly placeDep ROOT @esbuild/linux-arm64@0.27.2 OK for: esbuild@0.27.2 want: 0.27.2
+343 silly placeDep ROOT @esbuild/linux-ia32@0.27.2 OK for: esbuild@0.27.2 want: 0.27.2
+344 silly placeDep ROOT @esbuild/linux-loong64@0.27.2 OK for: esbuild@0.27.2 want: 0.27.2
+345 silly placeDep ROOT @esbuild/linux-mips64el@0.27.2 OK for: esbuild@0.27.2 want: 0.27.2
+346 silly placeDep ROOT @esbuild/linux-ppc64@0.27.2 OK for: esbuild@0.27.2 want: 0.27.2
+347 silly placeDep ROOT @esbuild/linux-riscv64@0.27.2 OK for: esbuild@0.27.2 want: 0.27.2
+348 silly placeDep ROOT @esbuild/linux-s390x@0.27.2 OK for: esbuild@0.27.2 want: 0.27.2
+349 silly placeDep ROOT @esbuild/linux-x64@0.27.2 OK for: esbuild@0.27.2 want: 0.27.2
+350 silly placeDep ROOT @esbuild/netbsd-arm64@0.27.2 OK for: esbuild@0.27.2 want: 0.27.2
+351 silly placeDep ROOT @esbuild/netbsd-x64@0.27.2 OK for: esbuild@0.27.2 want: 0.27.2
+352 silly placeDep ROOT @esbuild/openbsd-arm64@0.27.2 OK for: esbuild@0.27.2 want: 0.27.2
+353 silly placeDep ROOT @esbuild/openbsd-x64@0.27.2 OK for: esbuild@0.27.2 want: 0.27.2
+354 silly placeDep ROOT @esbuild/openharmony-arm64@0.27.2 OK for: esbuild@0.27.2 want: 0.27.2
+355 silly placeDep ROOT @esbuild/sunos-x64@0.27.2 OK for: esbuild@0.27.2 want: 0.27.2
+356 silly placeDep ROOT @esbuild/win32-arm64@0.27.2 OK for: esbuild@0.27.2 want: 0.27.2
+357 silly placeDep ROOT @esbuild/win32-ia32@0.27.2 OK for: esbuild@0.27.2 want: 0.27.2
+358 silly placeDep ROOT @esbuild/win32-x64@0.27.2 OK for: esbuild@0.27.2 want: 0.27.2
+359 timing idealTree:node_modules/esbuild Completed in 13ms
+360 timing idealTree:node_modules/@esbuild/aix-ppc64 Completed in 0ms
+361 timing idealTree:node_modules/@esbuild/android-arm Completed in 0ms
+362 timing idealTree:node_modules/@esbuild/android-arm64 Completed in 0ms
+363 timing idealTree:node_modules/@esbuild/android-x64 Completed in 0ms
+364 timing idealTree:node_modules/@esbuild/darwin-arm64 Completed in 0ms
+365 timing idealTree:node_modules/@esbuild/darwin-x64 Completed in 0ms
+366 timing idealTree:node_modules/@esbuild/freebsd-arm64 Completed in 0ms
+367 timing idealTree:node_modules/@esbuild/freebsd-x64 Completed in 0ms
+368 timing idealTree:node_modules/@esbuild/linux-arm Completed in 0ms
+369 timing idealTree:node_modules/@esbuild/linux-arm64 Completed in 0ms
+370 timing idealTree:node_modules/@esbuild/linux-ia32 Completed in 0ms
+371 timing idealTree:node_modules/@esbuild/linux-loong64 Completed in 0ms
+372 timing idealTree:node_modules/@esbuild/linux-mips64el Completed in 0ms
+373 timing idealTree:node_modules/@esbuild/linux-ppc64 Completed in 0ms
+374 timing idealTree:node_modules/@esbuild/linux-riscv64 Completed in 0ms
+375 timing idealTree:node_modules/@esbuild/linux-s390x Completed in 0ms
+376 timing idealTree:node_modules/@esbuild/linux-x64 Completed in 0ms
+377 timing idealTree:node_modules/@esbuild/netbsd-arm64 Completed in 0ms
+378 timing idealTree:node_modules/@esbuild/netbsd-x64 Completed in 0ms
+379 timing idealTree:node_modules/@esbuild/openbsd-arm64 Completed in 0ms
+380 timing idealTree:node_modules/@esbuild/openbsd-x64 Completed in 0ms
+381 timing idealTree:node_modules/@esbuild/openharmony-arm64 Completed in 0ms
+382 timing idealTree:node_modules/@esbuild/sunos-x64 Completed in 0ms
+383 timing idealTree:node_modules/@esbuild/win32-arm64 Completed in 0ms
+384 timing idealTree:node_modules/@esbuild/win32-ia32 Completed in 0ms
+385 timing idealTree:node_modules/@esbuild/win32-x64 Completed in 0ms
+386 silly placeDep ROOT to-regex-range@5.0.1 OK for: fill-range@7.1.1 want: ^5.0.1
+387 silly fetch manifest is-number@^7.0.0
+388 http fetch GET 200 https://registry.npmjs.org/is-number 41ms (cache miss)
+389 timing idealTree:node_modules/fill-range Completed in 42ms
+390 timing idealTree:node_modules/find-replace Completed in 0ms
+391 timing idealTree:node_modules/fsevents Completed in 0ms
+392 timing idealTree:node_modules/get-port Completed in 1ms
+393 timing idealTree:node_modules/glob-parent Completed in 0ms
+394 silly placeDep ROOT safer-buffer@2.1.2 OK for: iconv-lite@0.7.2 want: >= 2.1.2 < 3.0.0
+395 timing idealTree:node_modules/iconv-lite Completed in 0ms
+396 silly placeDep ROOT binary-extensions@2.3.0 OK for: is-binary-path@2.1.0 want: ^2.0.0
+397 timing idealTree:node_modules/is-binary-path Completed in 1ms
+398 timing idealTree:node_modules/binary-extensions Completed in 0ms
+399 silly placeDep ROOT is-extglob@2.1.1 OK for: is-glob@4.0.3 want: ^2.1.1
+400 timing idealTree:node_modules/is-glob Completed in 1ms
+401 timing idealTree:node_modules/is-extglob Completed in 0ms
+402 timing idealTree:node_modules/jsonc-parser Completed in 0ms
+403 timing idealTree:node_modules/lodash.camelcase Completed in 0ms
+404 silly placeDep ROOT charenc@0.0.2 OK for: md5@2.3.0 want: 0.0.2
+405 silly placeDep ROOT crypt@0.0.2 OK for: md5@2.3.0 want: 0.0.2
+406 silly placeDep ROOT is-buffer@1.1.6 OK for: md5@2.3.0 want: ~1.1.6
+407 timing idealTree:node_modules/md5 Completed in 1ms
+408 timing idealTree:node_modules/charenc Completed in 0ms
+409 timing idealTree:node_modules/crypt Completed in 0ms
+410 timing idealTree:node_modules/is-buffer Completed in 0ms
+411 silly placeDep ROOT @isaacs/brace-expansion@5.0.1 OK for: minimatch@10.1.2 want: ^5.0.1
+412 silly fetch manifest @isaacs/balanced-match@^4.0.1
+413 http fetch GET 200 https://registry.npmjs.org/@isaacs%2fbalanced-match 56ms (cache miss)
+414 timing idealTree:node_modules/minimatch Completed in 56ms
+415 silly placeDep ROOT @isaacs/balanced-match@4.0.1 OK for: @isaacs/brace-expansion@5.0.1 want: ^4.0.1
+416 timing idealTree:node_modules/@isaacs/brace-expansion Completed in 1ms
+417 timing idealTree:node_modules/@isaacs/balanced-match Completed in 0ms
+418 timing idealTree:node_modules/named-js-regexp Completed in 0ms
+419 timing idealTree:node_modules/normalize-path Completed in 0ms
+420 timing idealTree:node_modules/picomatch Completed in 0ms
+421 timing idealTree:node_modules/pyright Completed in 0ms
+422 timing idealTree:node_modules/readdirp Completed in 0ms
+423 silly placeDep node_modules/rxjs tslib@2.8.1 OK for: rxjs@7.8.2 want: ^2.1.0
+424 timing idealTree:node_modules/rxjs Completed in 2ms
+425 timing idealTree:node_modules/safer-buffer Completed in 0ms
+426 timing idealTree:node_modules/smol-toml Completed in 0ms
+427 silly placeDep ROOT buffer-from@1.1.2 OK for: source-map-support@0.5.21 want: ^1.0.0
+428 silly placeDep ROOT source-map@0.6.1 OK for: source-map-support@0.5.21 want: ^0.6.0
+429 timing idealTree:node_modules/source-map-support Completed in 1ms
+430 timing idealTree:node_modules/buffer-from Completed in 0ms
+431 timing idealTree:node_modules/source-map Completed in 0ms
+432 silly placeDep ROOT has-flag@4.0.0 OK for: supports-color@7.2.0 want: ^4.0.0
+433 timing idealTree:node_modules/supports-color Completed in 1ms
+434 timing idealTree:node_modules/has-flag Completed in 0ms
+435 timing idealTree:node_modules/tmp Completed in 0ms
+436 silly placeDep ROOT is-number@7.0.0 OK for: to-regex-range@5.0.1 want: ^7.0.0
+437 timing idealTree:node_modules/to-regex-range Completed in 0ms
+438 timing idealTree:node_modules/is-number Completed in 0ms
+439 timing idealTree:node_modules/tree-kill Completed in 0ms
+440 timing idealTree:node_modules/tslib Completed in 0ms
+441 timing idealTree:node_modules/typescript Completed in 0ms
+442 timing idealTree:node_modules/typical Completed in 0ms
+443 timing idealTree:node_modules/vscode-jsonrpc Completed in 0ms
+444 timing idealTree:node_modules/vscode-languageserver Completed in 0ms
+445 timing idealTree:node_modules/vscode-languageserver-protocol Completed in 0ms
+446 timing idealTree:node_modules/vscode-languageserver-textdocument Completed in 0ms
+447 timing idealTree:node_modules/vscode-languageserver-types Completed in 0ms
+448 timing idealTree:node_modules/vscode-uri Completed in 0ms
+449 silly placeDep ROOT isexe@3.1.1 OK for: which@4.0.0 want: ^3.1.1
+450 timing idealTree:node_modules/which Completed in 1ms
+451 timing idealTree:node_modules/isexe Completed in 0ms
+452 timing idealTree:node_modules/rxjs/node_modules/tslib Completed in 0ms
+453 timing idealTree:buildDeps Completed in 5121ms
+454 timing idealTree:fixDepFlags Completed in 1ms
+455 warn EBADENGINE Unsupported engine {
+455 warn EBADENGINE   package: 'minimatch@10.1.2',
+455 warn EBADENGINE   required: { node: '20 || >=22' },
+455 warn EBADENGINE   current: { node: 'v18.19.1', npm: '9.2.0' }
+455 warn EBADENGINE }
+456 warn EBADENGINE Unsupported engine {
+456 warn EBADENGINE   package: '@isaacs/brace-expansion@5.0.1',
+456 warn EBADENGINE   required: { node: '20 || >=22' },
+456 warn EBADENGINE   current: { node: 'v18.19.1', npm: '9.2.0' }
+456 warn EBADENGINE }
+457 warn EBADENGINE Unsupported engine {
+457 warn EBADENGINE   package: '@isaacs/balanced-match@4.0.1',
+457 warn EBADENGINE   required: { node: '20 || >=22' },
+457 warn EBADENGINE   current: { node: 'v18.19.1', npm: '9.2.0' }
+457 warn EBADENGINE }
+458 timing idealTree Completed in 5135ms
+459 timing reify:loadTrees Completed in 5135ms
+460 timing reify:diffTrees Completed in 1ms
+461 silly reify moves {}
+462 timing reify:retireShallow Completed in 0ms
+463 timing reify:createSparse Completed in 4ms
+464 silly reify mark deleted [
+464 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@biomejs/biome',
+464 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/.bin/biome'
+464 silly reify ]
+465 silly reify mark deleted [
+465 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@types/diff-match-patch'
+465 silly reify ]
+466 silly reify mark deleted [
+466 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@types/md5'
+466 silly reify ]
+467 silly reify mark deleted [
+467 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@types/node'
+467 silly reify ]
+468 silly reify mark deleted [
+468 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@types/which'
+468 silly reify ]
+469 silly reify mark deleted [
+469 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@zzzen/pyright-internal'
+469 silly reify ]
+470 silly reify mark deleted [
+470 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/coc.nvim'
+470 silly reify ]
+471 silly reify mark deleted [
+471 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/diff-match-patch'
+471 silly reify ]
+472 silly reify mark deleted [
+472 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/esbuild',
+472 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/.bin/esbuild'
+472 silly reify ]
+473 silly reify mark deleted [
+473 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/get-port'
+473 silly reify ]
+474 silly reify mark deleted [
+474 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/iconv-lite'
+474 silly reify ]
+475 silly reify mark deleted [
+475 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/md5'
+475 silly reify ]
+476 silly reify mark deleted [
+476 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/minimatch'
+476 silly reify ]
+477 silly reify mark deleted [
+477 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/named-js-regexp'
+477 silly reify ]
+478 silly reify mark deleted [
+478 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/rxjs'
+478 silly reify ]
+479 silly reify mark deleted [
+479 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/tree-kill',
+479 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/.bin/tree-kill'
+479 silly reify ]
+480 silly reify mark deleted [
+480 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/typescript',
+480 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/.bin/tsc',
+480 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/.bin/tsserver'
+480 silly reify ]
+481 silly reify mark deleted [
+481 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/which',
+481 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/.bin/node-which'
+481 silly reify ]
+482 silly reify mark deleted [
+482 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@biomejs/cli-darwin-arm64'
+482 silly reify ]
+483 silly reify mark deleted [
+483 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@biomejs/cli-darwin-x64'
+483 silly reify ]
+484 silly reify mark deleted [
+484 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@biomejs/cli-linux-arm64'
+484 silly reify ]
+485 silly reify mark deleted [
+485 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@biomejs/cli-linux-arm64-musl'
+485 silly reify ]
+486 silly reify mark deleted [
+486 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@biomejs/cli-linux-x64'
+486 silly reify ]
+487 silly reify mark deleted [
+487 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@biomejs/cli-linux-x64-musl'
+487 silly reify ]
+488 silly reify mark deleted [
+488 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@biomejs/cli-win32-arm64'
+488 silly reify ]
+489 silly reify mark deleted [
+489 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@biomejs/cli-win32-x64'
+489 silly reify ]
+490 silly reify mark deleted [
+490 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@yarnpkg/fslib'
+490 silly reify ]
+491 silly reify mark deleted [
+491 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@yarnpkg/libzip'
+491 silly reify ]
+492 silly reify mark deleted [
+492 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/chalk'
+492 silly reify ]
+493 silly reify mark deleted [
+493 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/chokidar'
+493 silly reify ]
+494 silly reify mark deleted [
+494 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/command-line-args'
+494 silly reify ]
+495 silly reify mark deleted [
+495 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/jsonc-parser'
+495 silly reify ]
+496 silly reify mark deleted [
+496 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/smol-toml'
+496 silly reify ]
+497 silly reify mark deleted [
+497 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/source-map-support'
+497 silly reify ]
+498 silly reify mark deleted [
+498 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/tmp'
+498 silly reify ]
+499 silly reify mark deleted [
+499 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/vscode-jsonrpc'
+499 silly reify ]
+500 silly reify mark deleted [
+500 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/vscode-languageserver',
+500 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/.bin/installServerIntoExtension'
+500 silly reify ]
+501 silly reify mark deleted [
+501 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/vscode-languageserver-protocol'
+501 silly reify ]
+502 silly reify mark deleted [
+502 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/vscode-languageserver-textdocument'
+502 silly reify ]
+503 silly reify mark deleted [
+503 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/vscode-languageserver-types'
+503 silly reify ]
+504 silly reify mark deleted [
+504 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/vscode-uri'
+504 silly reify ]
+505 silly reify mark deleted [
+505 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/tslib'
+505 silly reify ]
+506 silly reify mark deleted [
+506 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@types/emscripten'
+506 silly reify ]
+507 silly reify mark deleted [
+507 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/ansi-styles'
+507 silly reify ]
+508 silly reify mark deleted [
+508 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/supports-color'
+508 silly reify ]
+509 silly reify mark deleted [
+509 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/color-convert'
+509 silly reify ]
+510 silly reify mark deleted [
+510 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/anymatch'
+510 silly reify ]
+511 silly reify mark deleted [
+511 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/braces'
+511 silly reify ]
+512 silly reify mark deleted [
+512 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/glob-parent'
+512 silly reify ]
+513 silly reify mark deleted [
+513 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/is-binary-path'
+513 silly reify ]
+514 silly reify mark deleted [
+514 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/is-glob'
+514 silly reify ]
+515 silly reify mark deleted [
+515 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/normalize-path'
+515 silly reify ]
+516 silly reify mark deleted [
+516 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/readdirp'
+516 silly reify ]
+517 silly reify mark deleted [
+517 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/picomatch'
+517 silly reify ]
+518 silly reify mark deleted [
+518 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/fill-range'
+518 silly reify ]
+519 silly reify mark deleted [
+519 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/color-name'
+519 silly reify ]
+520 silly reify mark deleted [
+520 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/array-back'
+520 silly reify ]
+521 silly reify mark deleted [
+521 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/find-replace'
+521 silly reify ]
+522 silly reify mark deleted [
+522 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/lodash.camelcase'
+522 silly reify ]
+523 silly reify mark deleted [
+523 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/typical'
+523 silly reify ]
+524 silly reify mark deleted [
+524 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@esbuild/aix-ppc64'
+524 silly reify ]
+525 silly reify mark deleted [
+525 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@esbuild/android-arm'
+525 silly reify ]
+526 silly reify mark deleted [
+526 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@esbuild/android-arm64'
+526 silly reify ]
+527 silly reify mark deleted [
+527 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@esbuild/android-x64'
+527 silly reify ]
+528 silly reify mark deleted [
+528 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@esbuild/darwin-arm64'
+528 silly reify ]
+529 silly reify mark deleted [
+529 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@esbuild/darwin-x64'
+529 silly reify ]
+530 silly reify mark deleted [
+530 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@esbuild/freebsd-arm64'
+530 silly reify ]
+531 silly reify mark deleted [
+531 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@esbuild/freebsd-x64'
+531 silly reify ]
+532 silly reify mark deleted [
+532 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@esbuild/linux-arm'
+532 silly reify ]
+533 silly reify mark deleted [
+533 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@esbuild/linux-arm64'
+533 silly reify ]
+534 silly reify mark deleted [
+534 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@esbuild/linux-ia32'
+534 silly reify ]
+535 silly reify mark deleted [
+535 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@esbuild/linux-loong64'
+535 silly reify ]
+536 silly reify mark deleted [
+536 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@esbuild/linux-mips64el'
+536 silly reify ]
+537 silly reify mark deleted [
+537 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@esbuild/linux-ppc64'
+537 silly reify ]
+538 silly reify mark deleted [
+538 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@esbuild/linux-riscv64'
+538 silly reify ]
+539 silly reify mark deleted [
+539 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@esbuild/linux-s390x'
+539 silly reify ]
+540 silly reify mark deleted [
+540 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@esbuild/linux-x64'
+540 silly reify ]
+541 silly reify mark deleted [
+541 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@esbuild/netbsd-arm64'
+541 silly reify ]
+542 silly reify mark deleted [
+542 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@esbuild/netbsd-x64'
+542 silly reify ]
+543 silly reify mark deleted [
+543 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@esbuild/openbsd-arm64'
+543 silly reify ]
+544 silly reify mark deleted [
+544 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@esbuild/openbsd-x64'
+544 silly reify ]
+545 silly reify mark deleted [
+545 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@esbuild/openharmony-arm64'
+545 silly reify ]
+546 silly reify mark deleted [
+546 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@esbuild/sunos-x64'
+546 silly reify ]
+547 silly reify mark deleted [
+547 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@esbuild/win32-arm64'
+547 silly reify ]
+548 silly reify mark deleted [
+548 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@esbuild/win32-ia32'
+548 silly reify ]
+549 silly reify mark deleted [
+549 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@esbuild/win32-x64'
+549 silly reify ]
+550 silly reify mark deleted [
+550 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/to-regex-range'
+550 silly reify ]
+551 silly reify mark deleted [
+551 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/safer-buffer'
+551 silly reify ]
+552 silly reify mark deleted [
+552 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/binary-extensions'
+552 silly reify ]
+553 silly reify mark deleted [
+553 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/is-extglob'
+553 silly reify ]
+554 silly reify mark deleted [
+554 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/charenc'
+554 silly reify ]
+555 silly reify mark deleted [
+555 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/crypt'
+555 silly reify ]
+556 silly reify mark deleted [
+556 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/is-buffer'
+556 silly reify ]
+557 silly reify mark deleted [
+557 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@isaacs/brace-expansion'
+557 silly reify ]
+558 silly reify mark deleted [
+558 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/@isaacs/balanced-match'
+558 silly reify ]
+559 silly reify mark deleted [
+559 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/rxjs/node_modules/tslib'
+559 silly reify ]
+560 silly reify mark deleted [
+560 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/buffer-from'
+560 silly reify ]
+561 silly reify mark deleted [
+561 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/source-map'
+561 silly reify ]
+562 silly reify mark deleted [
+562 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/has-flag'
+562 silly reify ]
+563 silly reify mark deleted [
+563 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/is-number'
+563 silly reify ]
+564 silly reify mark deleted [
+564 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/isexe'
+564 silly reify ]
+565 timing reify:trashOmits Completed in 5ms
+566 timing reify:loadBundles Completed in 0ms
+567 silly audit bulk request { pyright: [ '1.1.408' ], fsevents: [ '2.3.3' ] }
+568 verbose reify failed optional dependency /home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/fsevents
+569 silly reify mark deleted [
+569 silly reify   '/home/estedev/vim-portable/.config/coc/extensions/node_modules/coc-pyright-05bdff3c-d8ff-4417-8a3a-7f3ebf8e3e22/node_modules/fsevents'
+569 silly reify ]
+570 timing reifyNode:node_modules/fsevents Completed in 2ms
+571 silly tarball no local data for pyright@https://registry.npmjs.org/pyright/-/pyright-1.1.408.tgz. Extracting by manifest.
+572 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 202ms
+573 timing auditReport:getReport Completed in 202ms
+574 silly audit report {}
+575 timing auditReport:init Completed in 0ms
+576 timing reify:audit Completed in 204ms
+577 http fetch GET 200 https://registry.npmjs.org/pyright/-/pyright-1.1.408.tgz 2450ms (cache miss)
+578 timing reifyNode:node_modules/pyright Completed in 2456ms
+579 timing reify:unpack Completed in 2457ms
+580 timing reify:unretire Completed in 0ms
+581 timing build:queue Completed in 2ms
+582 timing build:link:node_modules/pyright Completed in 1ms
+583 timing build:link Completed in 1ms
+584 timing build:deps Completed in 4ms
+585 timing build Completed in 4ms
+586 timing reify:build Completed in 4ms
+587 timing reify:trash Completed in 2ms
+588 timing reify:save Completed in 0ms
+589 timing reify Completed in 7617ms
+590 silly ADD
+591 silly ADD
+592 silly ADD
+593 silly ADD
+594 silly ADD
+595 silly ADD
+596 silly ADD
+597 silly ADD
+598 silly ADD
+599 silly ADD
+600 silly ADD
+601 silly ADD
+602 silly ADD
+603 silly ADD
+604 silly ADD
+605 silly ADD
+606 silly ADD
+607 silly ADD
+608 silly ADD
+609 silly ADD
+610 silly ADD
+611 silly ADD
+612 silly ADD
+613 silly ADD
+614 silly ADD
+615 silly ADD
+616 silly ADD
+617 silly ADD
+618 silly ADD
+619 silly ADD
+620 silly ADD
+621 silly ADD
+622 silly ADD
+623 silly ADD
+624 silly ADD
+625 silly ADD
+626 silly ADD
+627 silly ADD
+628 silly ADD
+629 silly ADD
+630 silly ADD
+631 silly ADD
+632 silly ADD
+633 silly ADD
+634 silly ADD
+635 silly ADD
+636 silly ADD
+637 silly ADD
+638 silly ADD
+639 silly ADD
+640 silly ADD
+641 silly ADD
+642 silly ADD
+643 silly ADD
+644 silly ADD
+645 silly ADD
+646 silly ADD
+647 silly ADD
+648 silly ADD
+649 silly ADD
+650 silly ADD
+651 silly ADD
+652 silly ADD
+653 silly ADD
+654 silly ADD
+655 silly ADD
+656 silly ADD
+657 silly ADD
+658 silly ADD
+659 silly ADD
+660 silly ADD
+661 silly ADD
+662 silly ADD
+663 silly ADD
+664 silly ADD
+665 silly ADD
+666 silly ADD
+667 silly ADD
+668 silly ADD
+669 silly ADD
+670 silly ADD
+671 silly ADD
+672 silly ADD
+673 silly ADD
+674 silly ADD
+675 silly ADD
+676 silly ADD
+677 silly ADD node_modules/tslib
+678 silly ADD node_modules/pyright
+679 silly ADD
+680 silly ADD
+681 silly ADD
+682 silly ADD
+683 silly ADD
+684 silly ADD
+685 silly ADD
+686 silly ADD
+687 silly ADD
+688 silly ADD
+689 silly ADD
+690 silly ADD
+691 silly ADD
+692 silly ADD
+693 timing command:install Completed in 7621ms
+694 verbose exit 0
+695 timing npm Completed in 7648ms
+696 info ok
