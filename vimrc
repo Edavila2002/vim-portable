@@ -77,10 +77,10 @@ set background=dark
 
 " --- TRANSPARENCIA  ---
 " Descomenta las siguientes 4 líneas si quieres fondo transparente:
-" hi Normal ctermbg=NONE guibg=NONE
-" hi LineNr ctermbg=NONE guibg=NONE
-" hi SignColumn ctermbg=NONE guibg=NONE
-" hi EndOfBuffer ctermbg=NONE guibg=NONE
+ hi Normal ctermbg=NONE guibg=NONE
+ hi LineNr ctermbg=NONE guibg=NONE
+ hi SignColumn ctermbg=NONE guibg=NONE
+ hi EndOfBuffer ctermbg=NONE guibg=NONE
 
 
 " ==========================================================
@@ -122,37 +122,24 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 
 " ==========================================================
-" 🚀 SUPER TAB: IA + AUTOCOMPLETADO (La Joya del IDE)
+" 🚀 CONFIGURACIÓN DE AUTOCOMPLETADO E IA (RECARGADA)
 " ==========================================================
 
-" Función auxiliar para detectar si estamos al inicio de línea
-function! CheckBackspace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+" 1. DESACTIVAR EL TAB NATIVO DE CODEIUM 
+" (Esto evita que Codeium se robe el Tab que usa CoC)
+let g:codeium_no_map_tab = 1
 
-" 1. TECLA TABULADOR (INTELIGENTE)
-" - Si hay menú CoC abierto -> Baja en la lista
-" - Si hay sugerencia de IA (gris) -> La acepta
-" - Si es inicio de línea -> Tab normal
-" - Si no -> Fuerza el autocompletado de CoC
+" 2. MAPPING PARA ACEPTAR IA CON CTRL + L
+" Usamos 'expr' para asegurar que Codeium reciba la orden correctamente
+imap <script><silent><nowait><expr> <C-l> codeium#Accept()
+
+" 3. TECLA TABULADOR (Ahora solo para CoC)
 inoremap <silent><expr> <Tab>
       \ coc#pum#visible() ? coc#pum#next(1) :
-      \ codeium#GetStatusString() =~# '0' ? 
-      \ (CheckBackspace() ? "\<Tab>" : coc#refresh()) :
-      \ codeium#Accept()
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
 
-" 2. TECLA SHIFT+TAB
-" - Sube en la lista del menú CoC
-inoremap <expr><S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
-
-" 3. TECLA ENTER
-" - Confirma la selección del menú CoC o hace salto de línea normal
-inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-" 4. CONTROLES MANUALES DE IA
-imap <C-j> <Cmd>call codeium#CycleCompletions(1)<CR>   " Siguiente opción IA
-imap <C-k> <Cmd>call codeium#CycleCompletions(-1)<CR>  " Anterior opción IA
-imap <C-x> <Cmd>call codeium#Clear()                   " Borrar sugerencia IA
-imap <C-l> <Cmd>call codeium#Accept()<CR>              " Forzar aceptación IA
+" 4. OTROS CONTROLES DE IA
+imap <C-j> <Cmd>call codeium#CycleCompletions(1)<CR>
+imap <C-k> <Cmd>call codeium#CycleCompletions(-1)<CR>
+imap <C-x> <Cmd>call codeium#Clear()
