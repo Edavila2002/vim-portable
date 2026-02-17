@@ -77,10 +77,10 @@ set background=dark
 
 " --- TRANSPARENCIA  ---
 " Descomenta las siguientes 4 líneas si quieres fondo transparente:
- hi Normal ctermbg=NONE guibg=NONE
- hi LineNr ctermbg=NONE guibg=NONE
- hi SignColumn ctermbg=NONE guibg=NONE
- hi EndOfBuffer ctermbg=NONE guibg=NONE
+" hi Normal ctermbg=NONE guibg=NONE
+ "hi LineNr ctermbg=NONE guibg=NONE
+ "hi SignColumn ctermbg=NONE guibg=NONE
+ "hi EndOfBuffer ctermbg=NONE guibg=NONE
 
 
 " ==========================================================
