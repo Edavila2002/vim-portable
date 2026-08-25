@@ -16,6 +16,12 @@ Este repositorio permite clonar, ejecutar y trabajar con Vim usando:
 - arquitectura extensible para diferentes lenguajes
 - integración con Git desde Vim
 
+> **Nota:** Portable significa que la configuración de Vim se mantiene dentro
+> del repositorio y puede trasladarse entre equipos sin depender de `~/.vim`
+> o `~/.vimrc`. Las dependencias del sistema, los plugins y las herramientas
+> específicas de cada lenguaje deben instalarse en cada equipo siguiendo
+> los pasos de este README.
+
 ---
 
 ## 🎯 Objetivo del proyecto
@@ -100,30 +106,35 @@ El script `vim.sh` detecta automáticamente el sistema y resuelve correctamente 
 
 ### Requisitos generales
 
-- Vim 8 o superior
+Antes de utilizar Vim Portable, el sistema debe contar con:
+
+- Vim **9.0.0438 o superior**
 - Git
-- Node.js (requerido por `coc.nvim`)
-- Nerd Font (para los iconos)
+- Node.js **20.19.0 o superior** (requerido por `coc.nvim`)
+- Nerd Font recomendada para visualizar correctamente los iconos
 - Terminal con soporte **True Color** recomendada para reproducir correctamente la paleta Code Dark
 
-### Para desarrollo C/C++
-
-- `clangd`
-- Extensión `coc-clangd` para CoC
-
-Puedes comprobar si `clangd` está disponible con:
+Puedes comprobar las versiones instaladas con:
 
 ```bash
-clangd --version
+vim --version
+git --version
+node --version
 ```
 
-Para otros lenguajes será necesario instalar el servidor LSP o extensión correspondiente.
+### Dependencias por lenguaje
+
+Vim Portable puede utilizarse con distintos lenguajes de programación.
+
+Cada lenguaje puede requerir su propio servidor LSP, extensión de CoC, compilador, intérprete u otras herramientas externas.
+
+Actualmente C/C++ es el entorno preconfigurado y probado en este repositorio.
 
 ---
 
 ## ⚙️ Instalación
 
-Clona el repositorio:
+### 1. Clonar el repositorio
 
 ```bash
 git clone https://github.com/Edavila2002/vim-portable.git
@@ -135,32 +146,97 @@ Entra en la carpeta:
 cd vim-portable
 ```
 
-Ejecuta Vim:
+### 2. Ejecutar Vim Portable
 
 ```bash
 ./vim.sh
 ```
 
-Dentro de Vim instala los plugins:
+Si el sistema no permite ejecutar el script:
+
+```bash
+chmod +x vim.sh
+```
+
+y vuelve a ejecutar:
+
+```bash
+./vim.sh
+```
+
+### 3. Instalar los plugins
+
+La primera vez que abras Vim Portable ejecuta:
 
 ```vim
 :PlugInstall
 ```
 
-### Soporte C/C++
+Cuando finalice la instalación, cierra Vim y vuelve a abrirlo:
 
-Si vas a desarrollar en C o C++, instala también la extensión de CoC:
+```bash
+./vim.sh
+```
+
+A partir de este momento estarán disponibles los plugins definidos en el `vimrc`.
+
+### 4. Configurar soporte para el lenguaje que vas a utilizar
+
+La configuración utiliza **coc.nvim** como base para incorporar soporte LSP.
+
+Cada lenguaje puede necesitar una extensión de CoC y/o un servidor LSP diferente.
+
+#### C/C++
+
+Para utilizar C o C++ instala:
 
 ```vim
 :CocInstall coc-clangd
 ```
 
-Y asegúrate de tener `clangd` disponible:
+`coc-clangd` utilizará el servidor `clangd`.
+
+Puedes comprobar si ya está instalado con:
 
 ```bash
 clangd --version
 ```
 
+Si `clangd` no está disponible, también puedes ejecutar desde Vim:
+
+```vim
+:CocCommand clangd.install
+```
+
+Después reinicia Vim.
+
+Puedes verificar que el servidor esté funcionando mediante:
+
+```vim
+:CocList services
+```
+
+Deberías ver `clangd` en ejecución al trabajar con archivos C o C++.
+
+### 5. Otros lenguajes
+
+Vim Portable no está limitado a C/C++.
+
+Para trabajar con otro lenguaje instala la extensión de CoC o servidor LSP correspondiente.
+
+La arquitectura es:
+
+```text
+Vim Portable
+     ↓
+coc.nvim
+     ↓
+Extensión / servidor LSP
+     ↓
+Lenguaje
+```
+
+De esta manera puedes mantener la misma configuración base de Vim e incorporar únicamente las herramientas necesarias para cada lenguaje.
 ---
 
 ## 🧠 Soporte LSP con CoC
