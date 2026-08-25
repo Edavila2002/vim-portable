@@ -1,14 +1,13 @@
-# Vim Portable AI IDE 🚀🤖
+# Vim Portable 🚀
 
 ![Vim portable – vista general](assets/vim-imagen1.png)
 
-Configuración **portable y reproducible** de Vim, ahora potenciada con **Inteligencia Artificial**, pensada para usar la **misma experiencia de edición** en cualquier computadora sin modificar el Vim del sistema.
+Configuración **portable y reproducible** de Vim, pensada para usar la **misma experiencia de edición** en cualquier computadora sin modificar el Vim del sistema.
 
 Este repositorio permite clonar, ejecutar y trabajar con Vim usando:
 - configuración propia
 - plugins gestionados con vim-plug
 - soporte LSP/autocompletado con CoC
-- **autocompletado con IA (Codeium)**
 - integración con Git desde Vim
 
 ---
@@ -19,50 +18,62 @@ El objetivo de este repositorio es:
 
 - Tener una configuración de Vim **portable**
 - No depender de `~/.vim` ni `~/.vimrc`
+- Usar Vim como editor principal para desarrollo de software
+- Incorporar herramientas de IDE sin perder la filosofía de edición de Vim.
 - Poder usar Vim en cualquier equipo con solo clonar el repo
 - Mantener un entorno limpio y controlado
+- Extender el entorno progresivamente según los lenguajes y tecnologías utilizadas
 
 ---
 
 ## 🧩 ¿Qué incluye esta configuración?
 
-- 🎨 Temas de color (Code Dark, Monokai)
-- 📁 Explorador de archivos (NERDTree)
-- 🔍 Búsqueda avanzada (fzf)
-- 🧠 Autocompletado y LSP (coc.nvim)
-- 🤖 **Inteligencia Artificial Gratuita (Codeium)**
-- 💬 Terminal integrada (floaterm)
-- 🧭 Git dentro de Vim (vim-fugitive)
-- ✨ Barra de estado (vim-airline)
-- 🌈 Iconos (vim-devicons)
+### Editor y apariencia
+- 🎨 Tema principal **Code Dark**.
+- 🎨 Tema alternativo **Monokai**.
+- ✨ Barra de estado con **vim-airline**.
+- 🌈 Iconos mediante **vim-devicons**.
+- 🔢 Números de línea absolutos y relativos.
+- 🎯 Resaltado de la línea actual.
+
+### Herramientas de desarrollo
+
+- 🧠 Autocompletado y soporte LSP mediante **coc.nvim**.
+- ⚙️ Soporte para C/C++ mediante **clangd**.
+- 📁 Explorador de archivos con **NERDTree**.
+- 🔍 Búsqueda rápida mediante **fzf** y **fzf.vim**.
+- 💬 Terminal integrada con **vim-floaterm**.
+- 🧭 Integración con Git mediante **vim-fugitive**.
+- 💬 Comentado rápido de código con **NERDCommenter**.
 
 ---
 
 ## 📂 Estructura del proyecto
-La estructura incluye ahora carpetas para almacenar el motor de la IA de forma local y portable:
+La estructura principal del proyecto es:
 
 ```text
 vim-portable/
 ├── vim.sh                 # Script para lanzar Vim portable
 ├── vimrc                  # Configuración principal de Vim
-├── coc-settings.json      # Configuración de CoC (LSP)
+├── coc-settings.json      # Configuración de CoC / LSP
 ├── .gitignore
 ├── README.md
-├── bin/                   # 🤖 MOTOR DE IA (Se descarga aquí automáticamente)
-├── .codeium/              # 🤖 BASE DE DATOS LOCAL DE LA IA
+├── assets/                # Imágenes y recursos del repositorio
 └── vim/
     ├── autoload/
-    │   └── plug.vim       # Gestor de plugins (vim-plug)
-    └── plugged/           # Plugins instalados (ignorado por Git)
+    │   └── plug.vim       # Gestor de plugins vim-plug
+    └── plugged/           # Plugins instalados localmente
 
 ```
+Algunas herramientas opcionales pueden generar directorios locales adicionales. Estos archivos no forman parte necesariamente de la configuración que debe versionarse en Git.
 
 ---
 ## 🖥️ Sistemas operativos compatibles
 
 
-Esta configuración de Vim está diseñada para sistemas Unix-like y ha sido probada en:
+La configuración está orientada principalmente a sistemas **Unix-like**.
 
+Ha sido diseñada para trabajar en:
 
 - ✅ Linux (Ubuntu, Arch, Fedora, etc.)
 
@@ -74,15 +85,11 @@ El script vim.sh detecta automáticamente el sistema y resuelve correctamente
 
 la ruta del proyecto, incluso cuando se ejecuta mediante enlaces simbólicos.
 
-
-
 ---
-
 
 ##  📝 Requisitos 
 
-
-- Vim 8+
+- Vim 8 o superior.
 
 - Git
 
@@ -90,260 +97,399 @@ la ruta del proyecto, incluso cuando se ejecuta mediante enlaces simbólicos.
 
 - Nerd font (para iconos en el terminal)
 
+- clangd (para soporte LSP de C/C++)
 
 ---
 
 
 ## ⚙️  Instalación
 
-
-Clona el repositorio y luego entra al proyecto:
-
+Clona el repositorio:
 
 ```bash
-
 git clone https://github.com/Edavila2002/vim-portable.git
+```
 
+Entra en la carpeta:
+
+```bash
 cd vim-portable
-
 ```
 
-
-Lanza Vim portable:
-
+Ejecuta Vim:
 
 ```bash
-
-./vim.sh 
-
+./vim.sh
 ```
 
-
-Dentro de Vim instala los Plugins:
-
+Dentro de Vim instala los plugins:
 
 ```vim
-
 :PlugInstall
-
 ```
 
 
 ---
-## 🤖 Activación de la IA (Solo la primera vez)
+## 🧠 Soporte LSP con CoC
 
-Para que la Inteligencia Artificial empiece a escribir código por ti, necesitas autorizarla una única vez. Esto descargará el motor de IA dentro de la carpeta bin/ de este proyecto:
+Este proyecto utiliza **coc.nvim** como cliente LSP.
+
+Esto permite incorporar funcionalidades como:
+
+- Autocompletado.
+- Navegación hacia definiciones.
+- Referencias.
+- Implementaciones.
+- Información de tipos.
+- Diagnósticos.
+- Renombrado de símbolos.
+- Documentación contextual.
+
+Cada lenguaje puede necesitar su propia extensión o servidor LSP.
+
+### C y C++
+
+Para C/C++ se utiliza:
+
+```text
+Vim
+ └── coc.nvim
+      └── coc-clangd
+           └── clangd
 ```
 
-    Abre Vim: ./vim.sh
-
-    Ejecuta el comando: :Codeium Auth
-
-    Se abrirá tu navegador. Copia el token que te den.
-
-    Pégalo en Vim y pulsa Enter.
-```
-
----
-
----
-## ⌨️ Atajos de Teclado (IA y Autocompletado)
-
-Hemos configurado la tecla TAB para que sea inteligente y maneje tanto el menú de autocompletado clásico como la IA sin conflictos:
-
-Ctrl + j: Ver siguiente opción de la IA.
-
-Ctrl + k: Ver opción anterior de la IA.
-
-Ctrl + x: Descartar la sugerencia actual.
-
-Ctrl + l: Forzar aceptación de la IA manualmente.
-
----
-
-
----
-
-
-## 🧠  Uso diario
-
-
-Puedes abrir archivos o carpetas directamente:
-
-
-```bash
-
-./vim.sh archivo.js
-
-./vim.sh 
-
-```
-
-
----
-
-
-## 🌍 Uso global (opcional)
-
-
-Por defecto, Vim-portable se ejecuta desde la carpeta del repositorio. Esto funciona correctamente, pero requiere estar ubicado dentro del proyecto o escribir la ruta absoluta al script.
-
-
-```bash
-
-./vim.sh archivo.txt
-
-```
-
-
-
-Si deseas ejecutar el mismo vim.sh desde cualquier carpeta del sistema, puedes habilitar el uso global creando un enlace simbólico.
-
-
-En tu sistema verifica que tengas la carpepta *** ~/.local/bin ***, si no la tienes, creala:
-
-
-```
-
-mkdir -p ~/.local/bin
-
-```
-
-
-Dentro de la carpeta crea un enlace simbólico a vim.sh, debes poner la ruta en donde clonaste el repositorio:
-
-
-```
-
-
-ln -s ruta al repositorio/vim-portable/vim.sh ~/.local/bin/vim.sh
-
-
-```
-
-Un enlace simbólico no copia archivos ni modifica el repositorio;
-
-simplemente le indica al sistema dónde se encuentra el script original.
-
-
----
-
-
-##  👍 Uso desde cualquier carpeta
-
-
-Puedes ejecutar vim-portable desde cualquier ubicación:
-
-
-```
-
-vim.sh archivo.c
-
-vim.sh archivo.py
-
-vim.sh .
-
-```
-
-
-El comportamiento será exactamente el mismo que al ejecutar ./vim.sh
-
-desde el repositorio.
-
-
----
-
-
-## 🧭 Comandos Git dentro de Vim
-
-
-Esta configuración incluye **vim-fugitive**, por lo que puedes usar:
-
+La extensión puede instalarse desde Vim con:
 
 ```vim
-
-:Git status
-
-:Git add archivo
-
-:Git commit
-
-:Git push
-
-```
-
-
----
-
-
-## 🧠 Nota sobre Coc (LSP)
-
-
-Este proyecto usa **coc.nvim** para autocompletado y soporte LSP.
-
-
-Dependiendo del lenguaje que uses, es posible que debas instalar
-
-las extensiones correspondientes dentro de Vim, por ejemplo:
-
-
-```vim
-
-:CocInstall coc-tsserver
-
-:CocInstall coc-pyright
-
 :CocInstall coc-clangd
-
 ```
 
+---
+
+## ⌨️ Autocompletado
+
+CoC muestra automáticamente un menú cuando existen sugerencias disponibles.
+
+El flujo configurado actualmente es:
+
+```text
+Escribir código
+      ↓
+Aparece el menú de sugerencias
+      ↓
+↑ / ↓ para seleccionar
+      ↓
+Enter para aceptar
+```
+
+### Controles
+
+| Tecla | Acción |
+|---|---|
+| `↑` | Opción anterior |
+| `↓` | Opción siguiente |
+| `Enter` | Aceptar sugerencia |
+| `Tab` | Indentación normal |
+
+Las flechas permanecen disponibles en **modo Insert** para interactuar cómodamente con el menú de autocompletado.
 
 ---
+
+## 🧭 Navegación LSP
+
+La configuración incluye los siguientes comandos:
+
+| Comando | Acción |
+|---|---|
+| `gd` | Ir a la definición |
+| `gy` | Ir a la definición del tipo |
+| `gi` | Ir a la implementación |
+| `gr` | Mostrar referencias |
+| `K` | Mostrar documentación |
+| `[g` | Ir al diagnóstico anterior |
+| `]g` | Ir al diagnóstico siguiente |
+| `<leader>rn` | Renombrar símbolo |
+
+Por ejemplo, colocando el cursor sobre una función:
+
+```text
+gd
+```
+
+permite saltar directamente a su definición.
+
+---
+
+## ↩️ Navegación entre saltos
+
+Vim mantiene un historial de los lugares visitados.
+
+Después de utilizar comandos como `gd` puedes regresar con:
+
+```text
+Ctrl + o
+```
+
+y avanzar nuevamente con:
+
+```text
+Ctrl + i
+```
+
+Flujo típico:
+
+```text
+main.c
+  │
+  │ gd
+  ▼
+definición
+  │
+  │ Ctrl+o
+  ▼
+main.c
+```
+
+---
+
+## 🔢 Números de línea relativos
+
+La configuración utiliza:
+
+```vim
+set number
+set relativenumber
+```
+
+La línea actual muestra su número real, mientras que las demás indican su distancia respecto al cursor.
+
+Esto facilita movimientos propios de Vim como:
+
+```text
+5j
+```
+
+para bajar cinco líneas, o:
+
+```text
+8k
+```
+
+para subir ocho líneas.
+
+---
+
+## 🚫 Movimiento con H J K L
+
+Las flechas están desactivadas en los modos **Normal** y **Visual** con el objetivo de fomentar el aprendizaje de los movimientos de Vim:
+
+```text
+h → izquierda
+j → abajo
+k → arriba
+l → derecha
+```
+
+En modo **Insert** las flechas permanecen habilitadas para utilizar el menú de autocompletado.
+
+---
+
+## 🧠 Uso diario
+
+Puedes abrir un archivo directamente:
+
+```bash
+./vim.sh archivo.c
+```
+
+También puedes iniciar Vim sin especificar un archivo:
+
+```bash
+./vim.sh
+```
+
+Desde allí puedes utilizar NERDTree, fzf y las demás herramientas instaladas para navegar por el proyecto.
+
+---
+
+## 🌍 Uso global opcional
+
+Por defecto puedes ejecutar:
+
+```bash
+./vim.sh archivo.c
+```
+
+desde la carpeta del repositorio.
+
+Si deseas acceder a Vim Portable desde cualquier ubicación, puedes crear un enlace simbólico.
+
+Primero asegúrate de tener:
+
+```bash
+mkdir -p ~/.local/bin
+```
+
+Después crea el enlace utilizando la ruta donde clonaste el repositorio:
+
+```bash
+ln -s /ruta/al/repositorio/vim-portable/vim.sh ~/.local/bin/vim.sh
+```
+
+Después podrás ejecutar:
+
+```bash
+vim.sh archivo.c
+```
+
+o:
+
+```bash
+vim.sh .
+```
+
+desde otras carpetas del sistema.
+
+---
+
+## 🧭 Git dentro de Vim
+
+La configuración incluye **vim-fugitive**, lo que permite ejecutar operaciones Git directamente desde Vim.
+
+Por ejemplo:
+
+```vim
+:Git status
+```
+
+```vim
+:Git add archivo
+```
+
+```vim
+:Git commit
+```
+
+```vim
+:Git push
+```
+
+Git también puede seguir utilizándose normalmente desde la terminal.
+
+---
+
+## 🤖 Inteligencia Artificial opcional
+
+El proyecto contempla integración con **Codeium/Windsurf**, pero actualmente se encuentra desactivada por defecto.
+
+Esto permite utilizar el entorno con:
+
+```text
+Vim
++
+CoC
++
+LSP
++
+herramientas de desarrollo
+```
+
+sin generación automática de código mediante IA.
+
+La integración puede habilitarse posteriormente desde el archivo `vimrc` cuando sea necesaria.
+
+De esta manera, la IA funciona como una herramienta adicional del entorno y no como una dependencia obligatoria.
+
+---
+
+## 🌐 Otros lenguajes
+
+La arquitectura basada en CoC permite ampliar el entorno progresivamente.
+
+Dependiendo del lenguaje utilizado, pueden instalarse extensiones LSP adicionales.
+
+Actualmente el entorno tiene soporte LSP configurado para C/C++ mediante:
+
+```vim
+:CocInstall coc-clangd
+```
+
+El soporte para nuevos lenguajes puede incorporarse según las necesidades de cada proyecto.
 
 ---
 
 ## 🔌 Plugins utilizados
 
-Esta configuración utiliza los siguientes plugins y proyectos open-source:
+Este proyecto utiliza los siguientes plugins y herramientas open-source:
 
-- **vim-plug** (Gestor de plugins)  
+- **vim-plug** — Gestor de plugins
   https://github.com/junegunn/vim-plug
 
-- **codeium.vim** (Inteligencia Artificial Gratuita)  
-  https://github.com/Exafunction/codeium.vim
-
-- **coc.nvim** (LSP y autocompletado)  
+- **coc.nvim** — LSP y autocompletado
   https://github.com/neoclide/coc.nvim
 
-- **NERDTree** (Explorador de archivos)  
+- **NERDTree** — Explorador de archivos
   https://github.com/preservim/nerdtree
 
-- **fzf / fzf.vim** (Búsqueda fuzzy instantánea)  
-  https://github.com/junegunn/fzf  
+- **fzf** — Motor de búsqueda fuzzy
+  https://github.com/junegunn/fzf
+
+- **fzf.vim** — Integración de fzf con Vim
   https://github.com/junegunn/fzf.vim
 
-- **vim-airline** (Barra de estado elegante)  
+- **vim-airline** — Barra de estado
   https://github.com/vim-airline/vim-airline
 
-- **vim-code-dark** (Tema visual estilo VS Code)  
+- **vim-code-dark** — Tema visual Code Dark
   https://github.com/tomasiser/vim-code-dark
 
-- **vim-monokai** (Tema visual Monokai)  
+- **vim-monokai** — Tema visual Monokai
   https://github.com/ku1ik/vim-monokai
 
-- **nerdcommenter** (Comentar código rápido)  
+- **NERDCommenter** — Comentado rápido de código
   https://github.com/preservim/nerdcommenter
 
-- **vim-polyglot** (Resaltado de sintaxis universal)  
+- **vim-polyglot** — Resaltado de sintaxis para múltiples lenguajes
   https://github.com/sheerun/vim-polyglot
 
-- **vim-devicons** (Iconos para archivos)  
+- **vim-devicons** — Iconos para archivos
   https://github.com/ryanoasis/vim-devicons
 
-- **vim-fugitive** (Cliente Git integrado)  
+- **vim-fugitive** — Integración con Git
   https://github.com/tpope/vim-fugitive
 
-- **vim-floaterm** (Terminal flotante)  
+- **vim-floaterm** — Terminal flotante
   https://github.com/voldikss/vim-floaterm
 
+### Integración opcional
+
+- **Codeium/Windsurf** — Asistencia mediante Inteligencia Artificial.
+  Actualmente desactivada por defecto.
+
 ---
+
+## 🚧 Evolución del proyecto
+
+Esta configuración se desarrolla progresivamente.
+
+La idea no es instalar herramientas innecesarias, sino incorporar nuevas capacidades a medida que sean requeridas para el desarrollo de software.
+
+Entre las áreas que pueden ampliarse posteriormente se encuentran:
+
+- Desarrollo web.
+- Desarrollo con C y C++.
+- Desarrollo de videojuegos.
+- Debugging.
+- Testing.
+- Formateo de código.
+- Sistemas de compilación.
+- Soporte LSP para nuevos lenguajes.
+- Integración opcional con herramientas de Inteligencia Artificial.
+
+---
+
+## 📄 Licencia
+
+Este proyecto contiene una configuración personal de Vim construida utilizando diferentes proyectos open-source.
+
+Consulta las licencias individuales de cada plugin para conocer sus respectivos términos de uso.

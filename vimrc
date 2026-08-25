@@ -29,20 +29,20 @@ Plug 'voldikss/vim-floaterm'      " Terminal flotante
 Plug 'tpope/vim-fugitive'         " Cliente Git integrado
 
 " --- Inteligencia Artificial ---
-Plug 'Exafunction/codeium.vim'    " Autocompletado con IA (Gratuito)
+"Plug 'Exafunction/codeium.vim'   " IA desactivada temporalmente
 
 call plug#end()
 
 
 " ==========================================================
-" 🤖 CONFIGURACIÓN DE PORTABILIDAD (IA)
+" 🤖 CODEIUM / WINDSURF
 " ==========================================================
-" Estas líneas fuerzan a la IA a instalarse DENTRO de la carpeta portable.
-" Así no deja residuos en el sistema operativo anfitrión.
 
-let g:codeium_manager_path = '/home/estedev/vim-portable/.codeium'
-let g:codeium_bin_path = '/home/estedev/vim-portable/bin/codeium_language_server'
+"let g:codeium_manager_path = '/home/estedev/vim-portable/.codeium'
+"let g:codeium_bin_path = '/home/estedev/vim-portable/bin/codeium_language_server'
 
+" No mostrar sugerencias de IA como texto gris
+"let g:codeium_render = v:false
 
 " ==========================================================
 " ⚙️ CONFIGURACIÓN GENERAL
@@ -56,11 +56,12 @@ set softtabstop=2               " Simula tabs de 2 espacios
 set tabstop=2                   " Visualización de tabs
 
 " Visualización
-set wrap                        " Ajuste de línea visual (no corta palabras)
-set number                      " Muestra números de línea
+set wrap                        " Ajusta líneas largas visualmente
+set number                      " Muestra el número real de la línea actual
+set relativenumber              " Muestra líneas relativas a la posición del cursor
 set cursorline                  " Resalta la línea actual
-set encoding=utf8               " Codificación universal
-syntax on                       " Activar colores de sintaxis
+set encoding=utf8               " Codificación UTF-8
+syntax on                       " Activa resaltado de sintaxis
 
 " Búsqueda
 set ignorecase                  " Ignorar mayúsculas al buscar...
@@ -77,69 +78,72 @@ set background=dark
 
 " --- TRANSPARENCIA  ---
 " Descomenta las siguientes 4 líneas si quieres fondo transparente:
-" hi Normal ctermbg=NONE guibg=NONE
- "hi LineNr ctermbg=NONE guibg=NONE
- "hi SignColumn ctermbg=NONE guibg=NONE
- "hi EndOfBuffer ctermbg=NONE guibg=NONE
+"hi Normal ctermbg=NONE guibg=NONE
+"hi LineNr ctermbg=NONE guibg=NONE
+"hi SignColumn ctermbg=NONE guibg=NONE
+"hi EndOfBuffer ctermbg=NONE guibg=NONE
 
 
 " ==========================================================
-" 🚫 MODO HARDCORE (Desactivar Flechas)
+" 🚫 MODO HARDCORE - MOVIMIENTO CON H J K L
 " ==========================================================
-" Obliga a usar h, j, k, l para moverse.
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-vnoremap <up> <nop>
-vnoremap <down> <nop>
-vnoremap <left> <nop>
-vnoremap <right> <nop>
 
+" --- Modo NORMAL ---
+nnoremap <up> <nop>     " Desactiva ↑
+nnoremap <down> <nop>   " Desactiva ↓
+nnoremap <left> <nop>   " Desactiva ←
+nnoremap <right> <nop>  " Desactiva →
+
+" --- Modo INSERT ---
+" Las flechas quedan habilitadas para usar el autocompletado.
+"inoremap <up> <nop>     " Desactivaría ↑
+"inoremap <down> <nop>   " Desactivaría ↓
+"inoremap <left> <nop>   " Desactivaría ←
+"inoremap <right> <nop>  " Desactivaría →
+
+" --- Modo VISUAL ---
+vnoremap <up> <nop>     " Desactiva ↑
+vnoremap <down> <nop>   " Desactiva ↓
+vnoremap <left> <nop>   " Desactiva ←
+vnoremap <right> <nop>  " Desactiva →
 
 " ==========================================================
 " 🧠 COC.NVIM - NAVEGACIÓN Y LSP
 " ==========================================================
-" Ir a definición (gd), tipo (gy), implementación (gi), referencias (gr)
+
+" Ir a definición
 nmap <silent> gd <Plug>(coc-definition)
+
+" Ir a definición de tipo
 nmap <silent> gy <Plug>(coc-type-definition)
+
+" Ir a implementación
 nmap <silent> gi <Plug>(coc-implementation)
+
+" Mostrar referencias
 nmap <silent> gr <Plug>(coc-references)
 
-" Mostrar documentación flotante (Shift + K)
+" Mostrar documentación
 nnoremap <silent> K :call CocActionAsync('doHover')<CR>
 
-" Renombrar variables en todo el archivo (<leader>rn)
+" Renombrar símbolo
 nmap <leader>rn <Plug>(coc-rename)
 
-" Diagnósticos (Errores y Warnings)
+" Ir al diagnóstico anterior
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
+
+" Ir al diagnóstico siguiente
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 
 " ==========================================================
-" 🚀 CONFIGURACIÓN DE AUTOCOMPLETADO E IA (RECARGADA)
+" 🧠 COC.NVIM - AUTOCOMPLETADO
 " ==========================================================
 
-" 1. DESACTIVAR EL TAB NATIVO DE CODEIUM 
-" (Esto evita que Codeium se robe el Tab que usa CoC)
-let g:codeium_no_map_tab = 1
-
-" 2. MAPPING PARA ACEPTAR IA CON CTRL + L
-" Usamos 'expr' para asegurar que Codeium reciba la orden correctamente
-imap <script><silent><nowait><expr> <C-l> codeium#Accept()
-
-" 3. TECLA TABULADOR (Ahora solo para CoC)
-inoremap <silent><expr> <Tab>
-      \ coc#pum#visible() ? coc#pum#next(1) :
-      \ CheckBackspace() ? "\<Tab>" :
-      \ coc#refresh()
-
-" 4. OTROS CONTROLES DE IA
-imap <C-j> <Cmd>call codeium#CycleCompletions(1)<CR>
-imap <C-k> <Cmd>call codeium#CycleCompletions(-1)<CR>
-imap <C-x> <Cmd>call codeium#Clear()
+" ENTER:
+" Si aparece el menú -> acepta la opción seleccionada
+" Si no hay menú -> inserta una nueva línea normalmente
+inoremap <silent><expr> <CR>
+      \ coc#pum#visible()
+      \ ? coc#pum#confirm()
+      \ : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
