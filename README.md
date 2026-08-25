@@ -237,6 +237,7 @@ Lenguaje
 ```
 
 De esta manera puedes mantener la misma configuración base de Vim e incorporar únicamente las herramientas necesarias para cada lenguaje.
+
 ---
 
 ## 🧠 Soporte LSP con CoC
