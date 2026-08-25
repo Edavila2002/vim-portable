@@ -1,15 +1,7 @@
 {
-  "languageserver": {
-    "clangd": {
-      "command": "clangd",
-      "filetypes": ["c", "cpp", "cxx", "h", "hpp"],
-      "rootPatterns": [".git/", "compile_commands.json"],
-      "trace.server": "verbose"
-    }
-  },
+  "semanticTokens.enable": true,
   "suggest.autoTrigger": "always",
   "hover.enable": true,
   "diagnostic.enable": true,
   "diagnostic.virtualText": true
 }
-

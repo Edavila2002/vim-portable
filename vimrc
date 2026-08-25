@@ -1,11 +1,18 @@
 " ============================================================================
-" VIM PORTABLE - CONFIGURACIÓN PROFESIONAL (CoC + Codeium)
+" VIM PORTABLE - CONFIGURACIÓN PROFESIONAL (CoC + LSP)
 " ============================================================================
 " Autor: Estedev
-" Descripción: Configuración optimizada para transformar Vim en un IDE ligero
-" con soporte para Inteligencia Artificial y autocompletado LSP.
+" Descripción: Entorno de Vim portable orientado al desarrollo de software,
+" con soporte LSP, autocompletado y navegación semántica de código.
 
 set nocompatible
+
+" ==========================================================
+" 🧠 CONFIGURACIÓN PORTABLE DE COC
+" ==========================================================
+
+" Usa el coc-settings.json del entorno HOME portable como configuración de CoC"
+let g:coc_config_home = expand('$HOME')
 
 " ==========================================================
 " 🧩 GESTIÓN DE PLUGINS
@@ -24,7 +31,7 @@ Plug 'junegunn/fzf'               " Motor de búsqueda fzf
 Plug 'junegunn/fzf.vim'           " Integración de búsqueda rápida en Vim
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Motor LSP (Autocompletado y Errores)
 Plug 'preservim/nerdcommenter'    " Comentar código rápido
-Plug 'sheerun/vim-polyglot'       " Resaltado de sintaxis para +100 lenguajes
+"Plug 'sheerun/vim-polyglot'       " Resaltado de sintaxis para +100 lenguajes
 Plug 'voldikss/vim-floaterm'      " Terminal flotante
 Plug 'tpope/vim-fugitive'         " Cliente Git integrado
 
@@ -32,7 +39,6 @@ Plug 'tpope/vim-fugitive'         " Cliente Git integrado
 "Plug 'Exafunction/codeium.vim'   " IA desactivada temporalmente
 
 call plug#end()
-
 
 " ==========================================================
 " 🤖 CODEIUM / WINDSURF
@@ -47,6 +53,7 @@ call plug#end()
 " ==========================================================
 " ⚙️ CONFIGURACIÓN GENERAL
 " ==========================================================
+
 " Indentación y Tabs
 set autoindent                  " Mantiene la indentación de la línea anterior
 set smartindent                 " Indentación inteligente para código
@@ -69,20 +76,43 @@ set smartcase                   " ...a menos que escribas una mayúscula
 set incsearch                   " Buscar mientras escribes
 set hlsearch                    " Resaltar resultados
 
-
 " ==========================================================
 " 🎨 APARIENCIA Y TEMA
 " ==========================================================
-colorscheme codedark            " Activar tema oscuro
-set background=dark
 
+set termguicolors              " Activa colores RGB reales en terminal
+set background=dark            " Define fondo oscuro
+colorscheme codedark           " Activa tema Code Dark
+
+" ==========================================================
+" 🎨 RESALTADO SEMÁNTICO - COC + CLANGD + CODEDARK
+" ==========================================================
+
+" Variables y parámetros -> Light Blue #9CDCFE
+highlight! link CocSemTypeVariable Identifier
+highlight! link CocSemTypeParameter Identifier
+highlight! link CocSemTypeProperty Identifier
+
+" Funciones -> Yellow #DCDCAA
+highlight! link CocSemTypeFunction Function
+
+" Macros -> Pink #C586C0
+highlight! link CocSemTypeMacro Macro
+
+" Tipos definidos por el usuario -> Blue Green #4EC9B0
+highlight CodedarkUserType guifg=#4EC9B0 ctermfg=43
+highlight! link CocSemTypeClass CodedarkUserType
+highlight! link CocSemTypeEnum CodedarkUserType
+highlight! link CocSemTypeType CodedarkUserType
+
+" Miembros de enum -> Constant
+highlight! link CocSemTypeEnumMember Constant
 " --- TRANSPARENCIA  ---
 " Descomenta las siguientes 4 líneas si quieres fondo transparente:
 "hi Normal ctermbg=NONE guibg=NONE
 "hi LineNr ctermbg=NONE guibg=NONE
 "hi SignColumn ctermbg=NONE guibg=NONE
 "hi EndOfBuffer ctermbg=NONE guibg=NONE
-
 
 " ==========================================================
 " 🚫 MODO HARDCORE - MOVIMIENTO CON H J K L

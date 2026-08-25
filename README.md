@@ -4,10 +4,16 @@
 
 Configuración **portable y reproducible** de Vim, pensada para usar la **misma experiencia de edición** en cualquier computadora sin modificar el Vim del sistema.
 
+Este repositorio está orientado al **desarrollo de software de propósito general**. La configuración puede utilizarse con diferentes lenguajes de programación mediante CoC y los servidores LSP correspondientes.
+
+Actualmente, el soporte más completo y probado está configurado para **C/C++ mediante coc-clangd y clangd**.
+
 Este repositorio permite clonar, ejecutar y trabajar con Vim usando:
+
 - configuración propia
 - plugins gestionados con vim-plug
 - soporte LSP/autocompletado con CoC
+- arquitectura extensible para diferentes lenguajes
 - integración con Git desde Vim
 
 ---
@@ -19,7 +25,7 @@ El objetivo de este repositorio es:
 - Tener una configuración de Vim **portable**
 - No depender de `~/.vim` ni `~/.vimrc`
 - Usar Vim como editor principal para desarrollo de software
-- Incorporar herramientas de IDE sin perder la filosofía de edición de Vim.
+- Incorporar herramientas de IDE sin perder la filosofía de edición de Vim
 - Poder usar Vim en cualquier equipo con solo clonar el repo
 - Mantener un entorno limpio y controlado
 - Extender el entorno progresivamente según los lenguajes y tecnologías utilizadas
@@ -29,17 +35,21 @@ El objetivo de este repositorio es:
 ## 🧩 ¿Qué incluye esta configuración?
 
 ### Editor y apariencia
+
 - 🎨 Tema principal **Code Dark**.
 - 🎨 Tema alternativo **Monokai**.
 - ✨ Barra de estado con **vim-airline**.
 - 🌈 Iconos mediante **vim-devicons**.
 - 🔢 Números de línea absolutos y relativos.
 - 🎯 Resaltado de la línea actual.
+- 🎨 Soporte **True Color** para utilizar los colores RGB del tema.
 
 ### Herramientas de desarrollo
 
 - 🧠 Autocompletado y soporte LSP mediante **coc.nvim**.
-- ⚙️ Soporte para C/C++ mediante **clangd**.
+- 🌐 Arquitectura extensible para múltiples lenguajes.
+- ⚙️ Soporte C/C++ preconfigurado mediante **coc-clangd + clangd**.
+- 🎨 Resaltado semántico para C/C++ integrado con la paleta **Code Dark**.
 - 📁 Explorador de archivos con **NERDTree**.
 - 🔍 Búsqueda rápida mediante **fzf** y **fzf.vim**.
 - 💬 Terminal integrada con **vim-floaterm**.
@@ -49,13 +59,14 @@ El objetivo de este repositorio es:
 ---
 
 ## 📂 Estructura del proyecto
+
 La estructura principal del proyecto es:
 
 ```text
 vim-portable/
 ├── vim.sh                 # Script para lanzar Vim portable
 ├── vimrc                  # Configuración principal de Vim
-├── coc-settings.json      # Configuración de CoC / LSP
+├── coc-settings.json      # Configuración de CoC y resaltado semántico
 ├── .gitignore
 ├── README.md
 ├── assets/                # Imágenes y recursos del repositorio
@@ -63,46 +74,54 @@ vim-portable/
     ├── autoload/
     │   └── plug.vim       # Gestor de plugins vim-plug
     └── plugged/           # Plugins instalados localmente
-
 ```
+
 Algunas herramientas opcionales pueden generar directorios locales adicionales. Estos archivos no forman parte necesariamente de la configuración que debe versionarse en Git.
 
 ---
-## 🖥️ Sistemas operativos compatibles
 
+## 🖥️ Sistemas operativos compatibles
 
 La configuración está orientada principalmente a sistemas **Unix-like**.
 
-Ha sido diseñada para trabajar en:
+Actualmente ha sido probada principalmente en:
 
-- ✅ Linux (Ubuntu, Arch, Fedora, etc.)
+- ✅ Linux
 
+También está diseñada para ser compatible con:
 
-- ✅ macOS
+- macOS
 
-
-El script vim.sh detecta automáticamente el sistema y resuelve correctamente
-
-la ruta del proyecto, incluso cuando se ejecuta mediante enlaces simbólicos.
+El script `vim.sh` detecta automáticamente el sistema y resuelve correctamente la ruta del proyecto, incluso cuando se ejecuta mediante enlaces simbólicos.
 
 ---
 
-##  📝 Requisitos 
+## 📝 Requisitos
 
-- Vim 8 o superior.
+### Requisitos generales
 
+- Vim 8 o superior
 - Git
+- Node.js (requerido por `coc.nvim`)
+- Nerd Font (para los iconos)
+- Terminal con soporte **True Color** recomendada para reproducir correctamente la paleta Code Dark
 
-- Node.js(requerido para coc.nvim)
+### Para desarrollo C/C++
 
-- Nerd font (para iconos en el terminal)
+- `clangd`
+- Extensión `coc-clangd` para CoC
 
-- clangd (para soporte LSP de C/C++)
+Puedes comprobar si `clangd` está disponible con:
+
+```bash
+clangd --version
+```
+
+Para otros lenguajes será necesario instalar el servidor LSP o extensión correspondiente.
 
 ---
 
-
-## ⚙️  Instalación
+## ⚙️ Instalación
 
 Clona el repositorio:
 
@@ -128,8 +147,22 @@ Dentro de Vim instala los plugins:
 :PlugInstall
 ```
 
+### Soporte C/C++
+
+Si vas a desarrollar en C o C++, instala también la extensión de CoC:
+
+```vim
+:CocInstall coc-clangd
+```
+
+Y asegúrate de tener `clangd` disponible:
+
+```bash
+clangd --version
+```
 
 ---
+
 ## 🧠 Soporte LSP con CoC
 
 Este proyecto utiliza **coc.nvim** como cliente LSP.
@@ -144,12 +177,15 @@ Esto permite incorporar funcionalidades como:
 - Diagnósticos.
 - Renombrado de símbolos.
 - Documentación contextual.
+- Resaltado semántico cuando el servidor LSP lo soporta.
 
 Cada lenguaje puede necesitar su propia extensión o servidor LSP.
 
 ### C y C++
 
-Para C/C++ se utiliza:
+Actualmente C/C++ es el entorno LSP preconfigurado y probado dentro del proyecto.
+
+Se utiliza:
 
 ```text
 Vim
@@ -163,6 +199,51 @@ La extensión puede instalarse desde Vim con:
 ```vim
 :CocInstall coc-clangd
 ```
+
+También es necesario disponer de `clangd` en el sistema:
+
+```bash
+clangd --version
+```
+
+---
+
+## 🎨 Resaltado semántico en C/C++
+
+La configuración utiliza los **Semantic Tokens** proporcionados por `clangd` a través de CoC.
+
+Esta funcionalidad se encuentra habilitada en `coc-settings.json`:
+
+```json
+{
+  "semanticTokens.enable": true
+}
+```
+
+El `vimrc` enlaza los principales tokens semánticos con la paleta Standard de **vim-code-dark**.
+
+Esto permite diferenciar visualmente elementos como:
+
+- Variables y parámetros → **Light Blue**
+- Funciones → **Yellow**
+- Tipos definidos por el usuario → **Blue Green**
+- Macros → **Pink**
+- Strings → **Orange**
+- Comentarios → **Green**
+
+La combinación utilizada actualmente es:
+
+```text
+clangd
+   ↓
+Semantic Tokens
+   ↓
+CoC
+   ↓
+vim-code-dark
+```
+
+De esta manera se conserva la paleta Code Dark mientras `clangd` aporta información semántica sobre el código C/C++.
 
 ---
 
@@ -398,23 +479,35 @@ sin generación automática de código mediante IA.
 
 La integración puede habilitarse posteriormente desde el archivo `vimrc` cuando sea necesaria.
 
+Para volver a utilizarla será necesario habilitar nuevamente el plugin y su configuración en el `vimrc`, instalarlo con `:PlugInstall` y realizar la autenticación correspondiente.
+
 De esta manera, la IA funciona como una herramienta adicional del entorno y no como una dependencia obligatoria.
 
 ---
 
 ## 🌐 Otros lenguajes
 
-La arquitectura basada en CoC permite ampliar el entorno progresivamente.
+**Vim Portable no está limitado a C/C++.**
 
-Dependiendo del lenguaje utilizado, pueden instalarse extensiones LSP adicionales.
+La arquitectura basada en **coc.nvim** permite utilizar el entorno con distintos lenguajes de programación instalando sus respectivas extensiones o servidores LSP.
 
-Actualmente el entorno tiene soporte LSP configurado para C/C++ mediante:
+C/C++ es actualmente el entorno que se encuentra **preconfigurado y probado** dentro del repositorio mediante `coc-clangd` y `clangd`.
 
-```vim
-:CocInstall coc-clangd
+Para utilizar otros lenguajes será necesario instalar las herramientas correspondientes para cada uno.
+
+La arquitectura general es:
+
+```text
+Lenguaje
+   ↓
+Servidor LSP / extensión CoC
+   ↓
+coc.nvim
+   ↓
+Vim Portable
 ```
 
-El soporte para nuevos lenguajes puede incorporarse según las necesidades de cada proyecto.
+Esto permite extender progresivamente el editor para trabajar con tecnologías de desarrollo web, backend, sistemas, videojuegos y otros entornos sin cambiar la base de Vim Portable.
 
 ---
 
@@ -449,9 +542,6 @@ Este proyecto utiliza los siguientes plugins y herramientas open-source:
 - **NERDCommenter** — Comentado rápido de código
   https://github.com/preservim/nerdcommenter
 
-- **vim-polyglot** — Resaltado de sintaxis para múltiples lenguajes
-  https://github.com/sheerun/vim-polyglot
-
 - **vim-devicons** — Iconos para archivos
   https://github.com/ryanoasis/vim-devicons
 
@@ -477,7 +567,7 @@ La idea no es instalar herramientas innecesarias, sino incorporar nuevas capacid
 Entre las áreas que pueden ampliarse posteriormente se encuentran:
 
 - Desarrollo web.
-- Desarrollo con C y C++.
+- Herramientas avanzadas para C y C++.
 - Desarrollo de videojuegos.
 - Debugging.
 - Testing.
